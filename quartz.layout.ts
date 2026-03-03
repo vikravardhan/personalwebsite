@@ -12,6 +12,7 @@ export const sharedPageComponents: SharedLayout = {
       LinkedIn: "https://www.linkedin.com/in/vikravardhan/",
       Instagram: "https://www.instagram.com/vikravardhan_/",
       YouTube: "https://www.youtube.com/@vikravardhan",
+      GitHub: "https://github.com/vikravardhan",
     },
   }),
 }
@@ -40,7 +41,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.NavLinks(),
   ],
   right: [
     Component.Graph(),
@@ -49,9 +50,17 @@ export const defaultContentPageLayout: PageLayout = {
   ],
 }
 
-// components for pages that display lists of pages  (e.g. tags or folders)
+// components for pages that display lists of pages (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
+  beforeBody: [
+    Component.Breadcrumbs(),
+    Component.ArticleTitle(),
+    Component.ContentMeta(),
+    Component.ConditionalRender({
+      component: Component.WritingStreak(),
+      condition: (page) => (page.fileData.slug ?? "").startsWith("writing"),
+    }),
+  ],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
@@ -64,7 +73,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.NavLinks(),
   ],
-  right: [],
+  right: [Component.Graph()],
 }
