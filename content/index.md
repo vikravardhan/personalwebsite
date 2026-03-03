@@ -2,38 +2,12 @@
 title: Home
 ---
 
-# Hi, I'm Vikravardhan.
+Hey, I'm Vikravardhan — Vik if you'd like.
 
-[One line about what you do or care about — keep it human, not a job title]
-
----
-
-## About
-
-[2–3 sentences about who you are and what drives you.]
-
-→ [[about|More about me]]
+This is my little corner of the internet. Poke around.
 
 ---
 
-## Projects
+[[about|About]] · [[now|Now]] · [[writing/index|Writing]]
 
-I build things. Some work, some don't — I write about both.
-
-→ [[projects/live|Live Projects]] · [[projects/failed|Failed Projects]]
-
----
-
-## Writing
-
-Essays and notes on [topics you write about].
-
-→ [[writing/index|All writing]]
-
----
-
-## Now
-
-What I'm currently working on, reading, and thinking about.
-
-→ [[now|Now]]
+[[projects/index|Projects]] → [[projects/live|Live]] · [[projects/failed|Failed]]
