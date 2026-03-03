@@ -112,8 +112,6 @@ export default (() => {
     }
     .streak-grid {
       display: none;
-      overflow-x: auto;
-      padding-bottom: 4px;
     }
     .streak-grid.active {
       display: block;
@@ -121,15 +119,17 @@ export default (() => {
     .streak-weeks {
       display: flex;
       gap: 3px;
+      width: 100%;
     }
     .streak-week {
       display: flex;
       flex-direction: column;
       gap: 3px;
+      flex: 1;
     }
     .streak-day {
-      width: 11px;
-      height: 11px;
+      aspect-ratio: 1;
+      width: 100%;
       border-radius: 2px;
       background: var(--lightgray);
     }
