@@ -48,7 +48,11 @@ export default (() => {
         weeks.push(<div class="streak-week">{days}</div>)
       }
 
-      return <div class="streak-weeks">{weeks}</div>
+      return (
+        <div class="streak-weeks" style={`grid-template-columns: repeat(${weeks.length}, 1fr)`}>
+          {weeks}
+        </div>
+      )
     }
 
     return (
@@ -117,7 +121,7 @@ export default (() => {
       display: block;
     }
     .streak-weeks {
-      display: flex;
+      display: grid;
       gap: 3px;
       width: 100%;
     }
@@ -125,7 +129,6 @@ export default (() => {
       display: flex;
       flex-direction: column;
       gap: 3px;
-      flex: 1;
     }
     .streak-day {
       aspect-ratio: 1;
