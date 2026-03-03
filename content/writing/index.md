@@ -2,8 +2,6 @@
 title: Writing
 ---
 
-# Writing
+Essays and notes on things I care about.
 
-Essays, notes, and half-formed thoughts.
-
-[Your posts will appear here as you add markdown files to this folder]
+Filter by: [Business](/tags/business) · [Health](/tags/health) · [Life](/tags/life) · [Hobbies](/tags/hobbies)

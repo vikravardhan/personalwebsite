@@ -7,7 +7,12 @@ export const sharedPageComponents: SharedLayout = {
   header: [],
   afterBody: [],
   footer: Component.Footer({
-    links: {},
+    links: {
+      "Twitter / X": "https://x.com/vikravardhan",
+      LinkedIn: "https://www.linkedin.com/in/vikravardhan/",
+      Instagram: "https://www.instagram.com/vikravardhan_/",
+      YouTube: "https://www.youtube.com/@vikravardhan",
+    },
   }),
 }
 
