@@ -1,10 +1,10 @@
 @use "./base.scss";
 
 // put your custom CSS here!
-:root {
-  --bodyFont: Georgia, "Times New Roman", serif;
-}
-
-body {
-  font-family: Georgia, "Times New Roman", serif !important;
+article p,
+article li,
+article blockquote,
+article td,
+article th {
+  font-family: Georgia, "Times New Roman", serif;
 }

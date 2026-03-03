@@ -1,21 +1,22 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
+import { resolveRelative, SimpleSlug } from "../util/path"
 
 export default (() => {
-  const NavLinks: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
-    const links = [
-      { text: "About", href: "/about" },
-      { text: "Projects", href: "/projects" },
-      { text: "Writing", href: "/writing" },
-      { text: "Now", href: "/now" },
+  const NavLinks: QuartzComponent = ({ displayClass, fileData }: QuartzComponentProps) => {
+    const links: { text: string; slug: SimpleSlug }[] = [
+      { text: "About", slug: "about" as SimpleSlug },
+      { text: "Projects", slug: "projects" as SimpleSlug },
+      { text: "Writing", slug: "writing" as SimpleSlug },
+      { text: "Now", slug: "now" as SimpleSlug },
     ]
 
     return (
       <nav class={classNames(displayClass, "nav-links")}>
         <ul>
-          {links.map(({ text, href }) => (
+          {links.map(({ text, slug }) => (
             <li>
-              <a href={href}>{text}</a>
+              <a href={resolveRelative(fileData.slug!, slug)}>{text}</a>
             </li>
           ))}
         </ul>
