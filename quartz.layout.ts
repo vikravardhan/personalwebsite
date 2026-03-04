@@ -5,7 +5,12 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.ConditionalRender({
+      component: Component.WorkoutLog(),
+      condition: (page) => (page.fileData.slug ?? "").startsWith("workouts"),
+    }),
+  ],
   footer: Component.Footer({
     links: {
       "Twitter / X": "https://x.com/vikravardhan",
@@ -60,6 +65,10 @@ export const defaultListPageLayout: PageLayout = {
     Component.ConditionalRender({
       component: Component.WritingStreak(),
       condition: (page) => (page.fileData.slug ?? "").startsWith("writing"),
+    }),
+    Component.ConditionalRender({
+      component: Component.WorkoutStreak(),
+      condition: (page) => (page.fileData.slug ?? "").startsWith("workouts"),
     }),
   ],
   left: [

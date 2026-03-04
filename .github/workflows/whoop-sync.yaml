@@ -1,0 +1,46 @@
+name: Sync Whoop Workouts
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # Daily at 6am UTC
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch Whoop workouts
+        id: fetch
+        env:
+          WHOOP_CLIENT_ID: ${{ secrets.WHOOP_CLIENT_ID }}
+          WHOOP_CLIENT_SECRET: ${{ secrets.WHOOP_CLIENT_SECRET }}
+          WHOOP_REFRESH_TOKEN: ${{ secrets.WHOOP_REFRESH_TOKEN }}
+        run: npx tsx scripts/fetch-whoop.ts
+
+      - name: Update refresh token secret
+        if: steps.fetch.outputs.new_refresh_token
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: gh secret set WHOOP_REFRESH_TOKEN --body "${{ steps.fetch.outputs.new_refresh_token }}"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/workouts/data.json
+          git diff --cached --quiet || git commit -m "Update workout data from Whoop"
+          git push

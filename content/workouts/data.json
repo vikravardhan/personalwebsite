@@ -1,0 +1,252 @@
+[
+  {
+    "id": 1,
+    "date": "2026-03-04",
+    "sport": "Running",
+    "strain": 8.5,
+    "duration_mins": 10,
+    "calories": 147,
+    "avg_hr": 160,
+    "max_hr": 179
+  },
+  {
+    "id": 2,
+    "date": "2026-03-01",
+    "sport": "Stretching",
+    "strain": 6.8,
+    "duration_mins": 34,
+    "calories": 197,
+    "avg_hr": 112,
+    "max_hr": 163
+  },
+  {
+    "id": 3,
+    "date": "2026-02-27",
+    "sport": "Stretching",
+    "strain": 4.1,
+    "duration_mins": 21,
+    "calories": 32,
+    "avg_hr": 87,
+    "max_hr": 113
+  },
+  {
+    "id": 4,
+    "date": "2026-02-27",
+    "sport": "Stretching",
+    "strain": 4.2,
+    "duration_mins": 15,
+    "calories": 34,
+    "avg_hr": 92,
+    "max_hr": 123
+  },
+  {
+    "id": 5,
+    "date": "2026-02-26",
+    "sport": "Stretching",
+    "strain": 8.9,
+    "duration_mins": 33,
+    "calories": 314,
+    "avg_hr": 132,
+    "max_hr": 166
+  },
+  {
+    "id": 6,
+    "date": "2026-02-25",
+    "sport": "Stretching",
+    "strain": 4.9,
+    "duration_mins": 12,
+    "calories": 72,
+    "avg_hr": 114,
+    "max_hr": 150
+  },
+  {
+    "id": 7,
+    "date": "2026-02-24",
+    "sport": "Activity",
+    "strain": 6.9,
+    "duration_mins": 24,
+    "calories": 202,
+    "avg_hr": 126,
+    "max_hr": 156
+  },
+  {
+    "id": 8,
+    "date": "2026-02-22",
+    "sport": "Activity",
+    "strain": 7.4,
+    "duration_mins": 36,
+    "calories": 275,
+    "avg_hr": 122,
+    "max_hr": 149
+  },
+  {
+    "id": 9,
+    "date": "2026-02-22",
+    "sport": "Activity",
+    "strain": 13.9,
+    "duration_mins": 100,
+    "calories": 935,
+    "avg_hr": 131,
+    "max_hr": 167
+  },
+  {
+    "id": 10,
+    "date": "2026-02-21",
+    "sport": "Activity",
+    "strain": 5.6,
+    "duration_mins": 17,
+    "calories": 122,
+    "avg_hr": 120,
+    "max_hr": 143
+  },
+  {
+    "id": 11,
+    "date": "2026-02-20",
+    "sport": "Stretching",
+    "strain": 5.1,
+    "duration_mins": 10,
+    "calories": 78,
+    "avg_hr": 123,
+    "max_hr": 150
+  },
+  {
+    "id": 12,
+    "date": "2026-02-18",
+    "sport": "Activity",
+    "strain": 5.6,
+    "duration_mins": 12,
+    "calories": 109,
+    "avg_hr": 131,
+    "max_hr": 151
+  },
+  {
+    "id": 13,
+    "date": "2026-02-15",
+    "sport": "Activity",
+    "strain": 8,
+    "duration_mins": 39,
+    "calories": 318,
+    "avg_hr": 126,
+    "max_hr": 155
+  },
+  {
+    "id": 14,
+    "date": "2026-02-14",
+    "sport": "Stretching",
+    "strain": 5.6,
+    "duration_mins": 12,
+    "calories": 98,
+    "avg_hr": 126,
+    "max_hr": 173
+  },
+  {
+    "id": 15,
+    "date": "2026-02-12",
+    "sport": "Activity",
+    "strain": 4.5,
+    "duration_mins": 13,
+    "calories": 45,
+    "avg_hr": 101,
+    "max_hr": 141
+  },
+  {
+    "id": 16,
+    "date": "2026-02-11",
+    "sport": "Activity",
+    "strain": 5,
+    "duration_mins": 12,
+    "calories": 86,
+    "avg_hr": 121,
+    "max_hr": 139
+  },
+  {
+    "id": 17,
+    "date": "2026-02-10",
+    "sport": "Running",
+    "strain": 14.2,
+    "duration_mins": 27,
+    "calories": 450,
+    "avg_hr": 169,
+    "max_hr": 190
+  },
+  {
+    "id": 18,
+    "date": "2026-02-09",
+    "sport": "Stretching",
+    "strain": 7.6,
+    "duration_mins": 22,
+    "calories": 214,
+    "avg_hr": 133,
+    "max_hr": 162
+  },
+  {
+    "id": 19,
+    "date": "2026-02-08",
+    "sport": "Activity",
+    "strain": 12.2,
+    "duration_mins": 87,
+    "calories": 740,
+    "avg_hr": 127,
+    "max_hr": 158
+  },
+  {
+    "id": 20,
+    "date": "2026-02-08",
+    "sport": "Activity",
+    "strain": 8.1,
+    "duration_mins": 21,
+    "calories": 195,
+    "avg_hr": 133,
+    "max_hr": 178
+  },
+  {
+    "id": 21,
+    "date": "2026-02-07",
+    "sport": "Running",
+    "strain": 9.4,
+    "duration_mins": 14,
+    "calories": 199,
+    "avg_hr": 157,
+    "max_hr": 187
+  },
+  {
+    "id": 22,
+    "date": "2026-02-06",
+    "sport": "Running",
+    "strain": 12.8,
+    "duration_mins": 23,
+    "calories": 355,
+    "avg_hr": 163,
+    "max_hr": 191
+  },
+  {
+    "id": 23,
+    "date": "2026-02-05",
+    "sport": "Running",
+    "strain": 6.8,
+    "duration_mins": 9,
+    "calories": 111,
+    "avg_hr": 149,
+    "max_hr": 177
+  },
+  {
+    "id": 24,
+    "date": "2026-02-02",
+    "sport": "Stretching",
+    "strain": 12.7,
+    "duration_mins": 54,
+    "calories": 566,
+    "avg_hr": 138,
+    "max_hr": 189
+  },
+  {
+    "id": 25,
+    "date": "2026-02-01",
+    "sport": "Activity",
+    "strain": 17.1,
+    "duration_mins": 85,
+    "calories": 1052,
+    "avg_hr": 147,
+    "max_hr": 192
+  }
+]

@@ -25,6 +25,8 @@ import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import NavLinks from "./NavLinks"
 import WritingStreak from "./WritingStreak"
+import WorkoutStreak from "./WorkoutStreak"
+import WorkoutLog from "./WorkoutLog"
 import SubstackEmbed from "./SubstackEmbed"
 
 export {
@@ -55,5 +57,7 @@ export {
   ConditionalRender,
   NavLinks,
   WritingStreak,
+  WorkoutStreak,
+  WorkoutLog,
   SubstackEmbed,
 }
