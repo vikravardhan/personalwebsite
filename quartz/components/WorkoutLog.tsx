@@ -48,6 +48,13 @@ export default (() => {
             ))}
           </tbody>
         </table>
+        <div class="workout-note">
+          <p>
+            Every session is a vote for the person I'm becoming. Some days it's a heavy lift, other
+            days it's just showing up for a stretch — but the streak doesn't care about intensity, only
+            consistency. This log is my proof of work.
+          </p>
+        </div>
       </div>
     )
   }
@@ -93,6 +100,18 @@ export default (() => {
     }
     [saved-theme="light"] .workout-log tbody td:nth-child(3) {
       color: #1a7f37;
+    }
+    .workout-note {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--lightgray);
+    }
+    .workout-note p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.6;
+      font-style: italic;
+      margin: 0;
     }
   `
 
