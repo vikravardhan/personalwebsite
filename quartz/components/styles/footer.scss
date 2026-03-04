@@ -12,4 +12,27 @@ footer {
     gap: 1rem;
     margin-top: -1rem;
   }
+
+  .footer-subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    opacity: 1;
+  }
+
+  .footer-subscribe__cta {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-size: 0.95rem;
+    color: var(--darkgray);
+    margin: 0 0 0.5rem 0;
+    opacity: 0.85;
+  }
+
+  .footer-subscribe iframe {
+    border: none;
+    background: transparent;
+    max-width: 100%;
+    border-radius: 8px;
+  }
 }

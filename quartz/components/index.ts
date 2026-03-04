@@ -25,6 +25,7 @@ import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import NavLinks from "./NavLinks"
 import WritingStreak from "./WritingStreak"
+import SubstackEmbed from "./SubstackEmbed"
 
 export {
   ArticleTitle,
@@ -54,4 +55,5 @@ export {
   ConditionalRender,
   NavLinks,
   WritingStreak,
+  SubstackEmbed,
 }
