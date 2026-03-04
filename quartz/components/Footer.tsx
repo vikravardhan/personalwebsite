@@ -16,13 +16,15 @@ export default ((opts?: Options) => {
         {showSubscribe && (
           <div class="footer-subscribe">
             <p class="footer-subscribe__cta">Get new posts in your inbox</p>
-            <iframe
-              src="https://www.vikra.cafe/embed"
-              width="480"
-              height="160"
-              frameBorder="0"
-              scrolling="no"
-            />
+            <div class="footer-subscribe__iframe-clip">
+              <iframe
+                src="https://www.vikra.cafe/embed"
+                width="480"
+                height="160"
+                frameBorder="0"
+                scrolling="no"
+              />
+            </div>
           </div>
         )}
         <ul>
