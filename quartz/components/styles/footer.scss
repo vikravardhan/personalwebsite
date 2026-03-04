@@ -31,15 +31,16 @@ footer {
 
   .footer-subscribe__iframe-clip {
     overflow: hidden;
-    height: 75px;
-    max-width: 100%;
-    margin-top: -10px;
+    height: 56px;
+    max-width: 480px;
+    border-radius: 28px;
   }
 
   .footer-subscribe iframe {
     border: none;
     background: transparent;
     max-width: 100%;
+    margin-top: -20px;
   }
 }
 
