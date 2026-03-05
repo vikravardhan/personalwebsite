@@ -28,6 +28,7 @@ import WritingStreak from "./WritingStreak"
 import WorkoutStreak from "./WorkoutStreak"
 import WorkoutLog from "./WorkoutLog"
 import SubstackEmbed from "./SubstackEmbed"
+import Recommendations from "./Recommendations"
 
 export {
   ArticleTitle,
@@ -60,4 +61,5 @@ export {
   WorkoutStreak,
   WorkoutLog,
   SubstackEmbed,
+  Recommendations,
 }

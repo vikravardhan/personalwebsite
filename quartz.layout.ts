@@ -10,6 +10,10 @@ export const sharedPageComponents: SharedLayout = {
       component: Component.WorkoutLog(),
       condition: (page) => (page.fileData.slug ?? "").startsWith("workouts"),
     }),
+    Component.ConditionalRender({
+      component: Component.Recommendations(),
+      condition: (page) => (page.fileData.slug ?? "").startsWith("recommendations"),
+    }),
   ],
   footer: Component.Footer({
     links: {

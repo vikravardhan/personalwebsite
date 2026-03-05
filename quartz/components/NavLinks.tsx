@@ -9,6 +9,7 @@ export default (() => {
       { text: "Projects", slug: "projects" as SimpleSlug },
       { text: "Writing", slug: "writing" as SimpleSlug },
       { text: "Workouts", slug: "workouts" as SimpleSlug },
+      { text: "Recommendations", slug: "recommendations" as SimpleSlug },
       { text: "Music", slug: "music" as SimpleSlug },
       { text: "Now", slug: "now" as SimpleSlug },
     ]
