@@ -21,6 +21,7 @@ interface WhoopWorkout {
   start: string
   end: string
   sport_id: number
+  sport_name: string
   score_state: string
   score?: {
     strain: number
@@ -35,24 +36,6 @@ interface TokenResponse {
   access_token: string
   refresh_token: string
   expires_in: number
-}
-
-async function fetchSportNames(accessToken: string): Promise<Record<number, string>> {
-  const res = await fetch(`${WHOOP_API}/v2/sport`, {
-    headers: { Authorization: `Bearer ${accessToken}` },
-  })
-
-  if (!res.ok) {
-    const text = await res.text()
-    throw new Error(`Sport fetch failed (${res.status}): ${text}`)
-  }
-
-  const sports = (await res.json()) as { id: number; name: string }[]
-  const map: Record<number, string> = {}
-  for (const s of sports) {
-    map[s.id] = s.name
-  }
-  return map
 }
 
 async function refreshAccessToken(): Promise<{ accessToken: string; refreshToken: string }> {
@@ -127,10 +110,10 @@ interface Workout {
   max_hr: number
 }
 
-function toWorkout(w: WhoopWorkout, sportNames: Record<number, string>): Omit<Workout, "id"> {
+function toWorkout(w: WhoopWorkout): Omit<Workout, "id"> {
   return {
     date: w.start.split("T")[0],
-    sport: sportNames[w.sport_id] ?? "Activity",
+    sport: w.sport_name || "Activity",
     strain: Math.round((w.score?.strain ?? 0) * 10) / 10,
     duration_mins: durationMins(w.start, w.end),
     calories: Math.round((w.score?.kilojoule ?? 0) / 4.184),
@@ -164,9 +147,6 @@ async function main() {
     ? new Date(latestDate + "T00:00:00.000Z").toISOString()
     : new Date(Date.now() - 14 * 86400000).toISOString() // fallback: last 14 days
 
-  console.log("Fetching sport names...")
-  const sportNames = await fetchSportNames(accessToken)
-
   console.log(`Fetching workouts since ${since}...`)
   const raw = await fetchWorkoutsSince(accessToken, since)
 
@@ -175,7 +155,7 @@ async function main() {
     return
   }
 
-  const newWorkouts = raw.map((w) => toWorkout(w, sportNames))
+  const newWorkouts = raw.map((w) => toWorkout(w))
 
   // Deduplicate by date+sport+duration to avoid re-adding existing entries
   const existingKeys = new Set(existing.map((w) => `${w.date}|${w.sport}|${w.duration_mins}`))
