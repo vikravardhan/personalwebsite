@@ -33,7 +33,7 @@ jobs:
         run: npx tsx scripts/fetch-whoop.ts
 
       - name: Update refresh token secret
-        if: steps.fetch.outputs.new_refresh_token
+        if: always() && steps.fetch.outputs.new_refresh_token
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: gh secret set WHOOP_REFRESH_TOKEN --body "${{ steps.fetch.outputs.new_refresh_token }}"
