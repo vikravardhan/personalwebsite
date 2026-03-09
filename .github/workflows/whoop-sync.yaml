@@ -42,6 +42,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add content/workouts/data.json
+          git add content/workouts/data.json content/workouts/streak.json
           git diff --cached --quiet || git commit -m "Update workout data from Whoop"
           git push

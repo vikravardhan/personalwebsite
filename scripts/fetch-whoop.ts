@@ -176,6 +176,20 @@ async function main() {
 
   fs.writeFileSync(outPath, JSON.stringify(merged, null, 2) + "\n")
   console.log(`Added ${unique.length} new workout(s). Total: ${merged.length}`)
+
+  // Update streak.json — append new unique dates for the heatmap
+  const streakPath = path.join(process.cwd(), "content", "workouts", "streak.json")
+  let streakDates: string[] = []
+  if (fs.existsSync(streakPath)) {
+    streakDates = JSON.parse(fs.readFileSync(streakPath, "utf-8")) as string[]
+  }
+  const streakSet = new Set(streakDates)
+  for (const w of unique) {
+    streakSet.add(w.date)
+  }
+  const sortedDates = [...streakSet].sort()
+  fs.writeFileSync(streakPath, JSON.stringify(sortedDates, null, 2) + "\n")
+  console.log(`Streak dates: ${sortedDates.length} total`)
 }
 
 main().catch((err) => {

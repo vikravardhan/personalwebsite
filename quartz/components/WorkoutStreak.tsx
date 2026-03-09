@@ -23,16 +23,24 @@ export function loadWorkoutData(): Workout[] {
   }
 }
 
+function loadStreakDates(): string[] {
+  const streakPath = path.join(process.cwd(), "content", "workouts", "streak.json")
+  try {
+    return JSON.parse(fs.readFileSync(streakPath, "utf-8"))
+  } catch {
+    return []
+  }
+}
+
 export default (() => {
   const WorkoutStreak: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
-    const workouts = loadWorkoutData()
+    const streakDates = loadStreakDates()
 
     // Build date set for streak
-    const dateSet = new Set<string>()
-    workouts.forEach((w) => dateSet.add(w.date))
+    const dateSet = new Set(streakDates)
 
     const currentYear = new Date().getFullYear()
-    const yearsInData = [...new Set(workouts.map((w) => parseInt(w.date.slice(0, 4))))]
+    const yearsInData = [...new Set(streakDates.map((d) => parseInt(d.slice(0, 4))))]
     const years = [...new Set([currentYear, ...yearsInData])].sort((a, b) => b - a)
 
     const renderGrid = (year: number) => {
@@ -77,7 +85,7 @@ export default (() => {
       <div class={classNames(displayClass, "workout-streak")}>
         <div class="streak-header">
           <span class="streak-label">
-            {workouts.length} workout{workouts.length !== 1 ? "s" : ""}
+            {streakDates.length} workout{streakDates.length !== 1 ? "s" : ""}
           </span>
           <div class="streak-year-tabs">
             {years.map((year, i) => (
