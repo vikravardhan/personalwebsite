@@ -89,13 +89,12 @@ async function refreshAccessToken(): Promise<{ accessToken: string; refreshToken
   return { accessToken: data.access_token, refreshToken: data.refresh_token }
 }
 
-async function fetchWorkouts(accessToken: string): Promise<WhoopWorkout[]> {
+async function fetchWorkoutsSince(accessToken: string, since: string): Promise<WhoopWorkout[]> {
   const allWorkouts: WhoopWorkout[] = []
   let nextToken: string | undefined
 
-  // Fetch enough pages to get 25 scored workouts
-  while (allWorkouts.length < 25) {
-    const params = new URLSearchParams({ limit: "25" })
+  while (true) {
+    const params = new URLSearchParams({ limit: "25", start: since })
     if (nextToken) params.set("nextToken", nextToken)
 
     const res = await fetch(`${WHOOP_API}/v2/activity/workout?${params}`, {
@@ -115,14 +114,45 @@ async function fetchWorkouts(accessToken: string): Promise<WhoopWorkout[]> {
     nextToken = data.next_token
   }
 
-  return allWorkouts.slice(0, 25)
+  return allWorkouts
 }
 
 function durationMins(start: string, end: string): number {
   return Math.round((new Date(end).getTime() - new Date(start).getTime()) / 60000)
 }
 
+interface Workout {
+  id: number
+  date: string
+  sport: string
+  strain: number
+  duration_mins: number
+  calories: number
+  avg_hr: number
+  max_hr: number
+}
+
+function toWorkout(w: WhoopWorkout): Omit<Workout, "id"> {
+  return {
+    date: w.start.split("T")[0],
+    sport: SPORT_NAMES[w.sport_id] ?? "Activity",
+    strain: Math.round((w.score?.strain ?? 0) * 10) / 10,
+    duration_mins: durationMins(w.start, w.end),
+    calories: Math.round((w.score?.kilojoule ?? 0) / 4.184),
+    avg_hr: w.score?.average_heart_rate ?? 0,
+    max_hr: w.score?.max_heart_rate ?? 0,
+  }
+}
+
 async function main() {
+  const outPath = path.join(process.cwd(), "content", "workouts", "data.json")
+
+  // Load existing workouts
+  let existing: Workout[] = []
+  if (fs.existsSync(outPath)) {
+    existing = JSON.parse(fs.readFileSync(outPath, "utf-8")) as Workout[]
+  }
+
   console.log("Refreshing Whoop access token...")
   const { accessToken, refreshToken: newRefreshToken } = await refreshAccessToken()
 
@@ -133,23 +163,36 @@ async function main() {
     console.log("Refresh token rotated — will update secret.")
   }
 
-  console.log("Fetching workouts...")
-  const raw = await fetchWorkouts(accessToken)
+  // Fetch only workouts newer than the latest existing entry
+  const latestDate = existing[0]?.date
+  const since = latestDate
+    ? new Date(latestDate + "T00:00:00.000Z").toISOString()
+    : new Date(Date.now() - 14 * 86400000).toISOString() // fallback: last 14 days
 
-  const workouts = raw.map((w, i) => ({
-    id: i + 1,
-    date: w.start.split("T")[0],
-    sport: SPORT_NAMES[w.sport_id] ?? "Activity",
-    strain: Math.round((w.score?.strain ?? 0) * 10) / 10,
-    duration_mins: durationMins(w.start, w.end),
-    calories: Math.round((w.score?.kilojoule ?? 0) / 4.184),
-    avg_hr: w.score?.average_heart_rate ?? 0,
-    max_hr: w.score?.max_heart_rate ?? 0,
-  }))
+  console.log(`Fetching workouts since ${since}...`)
+  const raw = await fetchWorkoutsSince(accessToken, since)
 
-  const outPath = path.join(process.cwd(), "content", "workouts", "data.json")
-  fs.writeFileSync(outPath, JSON.stringify(workouts, null, 2) + "\n")
-  console.log(`Wrote ${workouts.length} workouts to ${outPath}`)
+  if (raw.length === 0) {
+    console.log("No new workouts found.")
+    return
+  }
+
+  const newWorkouts = raw.map((w) => toWorkout(w))
+
+  // Deduplicate by date+sport+duration to avoid re-adding existing entries
+  const existingKeys = new Set(existing.map((w) => `${w.date}|${w.sport}|${w.duration_mins}`))
+  const unique = newWorkouts.filter((w) => !existingKeys.has(`${w.date}|${w.sport}|${w.duration_mins}`))
+
+  if (unique.length === 0) {
+    console.log("All fetched workouts already exist. No changes.")
+    return
+  }
+
+  // Prepend new workouts (newest first), keep only the 10 most recent, and re-number IDs
+  const merged = [...unique, ...existing].slice(0, 10).map((w, i) => ({ ...w, id: i + 1 }))
+
+  fs.writeFileSync(outPath, JSON.stringify(merged, null, 2) + "\n")
+  console.log(`Added ${unique.length} new workout(s). Total: ${merged.length}`)
 }
 
 main().catch((err) => {
