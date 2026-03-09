@@ -37,27 +37,22 @@ interface TokenResponse {
   expires_in: number
 }
 
-// Map common Whoop sport IDs to readable names
-const SPORT_NAMES: Record<number, string> = {
-  0: "Running",
-  1: "Cycling",
-  16: "Running",
-  17: "Cycling",
-  22: "Yoga",
-  23: "HIIT",
-  25: "Strength Training",
-  27: "Swimming",
-  33: "CrossFit",
-  43: "Functional Fitness",
-  44: "Strength Training",
-  48: "Rowing",
-  52: "Pilates",
-  55: "Hiking",
-  56: "Walking",
-  63: "Stretching",
-  71: "Weightlifting",
-  84: "Spinning",
-  "-1": "Activity",
+async function fetchSportNames(accessToken: string): Promise<Record<number, string>> {
+  const res = await fetch(`${WHOOP_API}/v2/sport`, {
+    headers: { Authorization: `Bearer ${accessToken}` },
+  })
+
+  if (!res.ok) {
+    const text = await res.text()
+    throw new Error(`Sport fetch failed (${res.status}): ${text}`)
+  }
+
+  const sports = (await res.json()) as { id: number; name: string }[]
+  const map: Record<number, string> = {}
+  for (const s of sports) {
+    map[s.id] = s.name
+  }
+  return map
 }
 
 async function refreshAccessToken(): Promise<{ accessToken: string; refreshToken: string }> {
@@ -132,10 +127,10 @@ interface Workout {
   max_hr: number
 }
 
-function toWorkout(w: WhoopWorkout): Omit<Workout, "id"> {
+function toWorkout(w: WhoopWorkout, sportNames: Record<number, string>): Omit<Workout, "id"> {
   return {
     date: w.start.split("T")[0],
-    sport: SPORT_NAMES[w.sport_id] ?? "Activity",
+    sport: sportNames[w.sport_id] ?? "Activity",
     strain: Math.round((w.score?.strain ?? 0) * 10) / 10,
     duration_mins: durationMins(w.start, w.end),
     calories: Math.round((w.score?.kilojoule ?? 0) / 4.184),
@@ -169,6 +164,9 @@ async function main() {
     ? new Date(latestDate + "T00:00:00.000Z").toISOString()
     : new Date(Date.now() - 14 * 86400000).toISOString() // fallback: last 14 days
 
+  console.log("Fetching sport names...")
+  const sportNames = await fetchSportNames(accessToken)
+
   console.log(`Fetching workouts since ${since}...`)
   const raw = await fetchWorkoutsSince(accessToken, since)
 
@@ -177,7 +175,7 @@ async function main() {
     return
   }
 
-  const newWorkouts = raw.map((w) => toWorkout(w))
+  const newWorkouts = raw.map((w) => toWorkout(w, sportNames))
 
   // Deduplicate by date+sport+duration to avoid re-adding existing entries
   const existingKeys = new Set(existing.map((w) => `${w.date}|${w.sport}|${w.duration_mins}`))
