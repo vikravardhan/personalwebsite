@@ -85,7 +85,10 @@ async function fetchWorkoutsSince(accessToken: string, since: string): Promise<W
     }
 
     const data = (await res.json()) as { records: WhoopWorkout[]; next_token?: string }
-    const scored = data.records.filter((w) => w.score_state === "SCORED" && w.score)
+    const IGNORED_SPORTS = ["commuting"]
+    const scored = data.records.filter(
+      (w) => w.score_state === "SCORED" && w.score && !IGNORED_SPORTS.includes(w.sport_name?.toLowerCase())
+    )
     allWorkouts.push(...scored)
 
     if (!data.next_token) break
@@ -113,7 +116,9 @@ interface Workout {
 function toWorkout(w: WhoopWorkout): Omit<Workout, "id"> {
   return {
     date: w.start.split("T")[0],
-    sport: w.sport_name || "Activity",
+    sport: w.sport_name
+      ? w.sport_name.replace(/\b\w/g, (c) => c.toUpperCase())
+      : "Activity",
     strain: Math.round((w.score?.strain ?? 0) * 10) / 10,
     duration_mins: durationMins(w.start, w.end),
     calories: Math.round((w.score?.kilojoule ?? 0) / 4.184),
