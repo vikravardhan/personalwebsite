@@ -2,13 +2,51 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import { classNames } from "../util/lang"
 import { loadWorkoutData } from "./WorkoutStreak"
 
+const SPORT_ICONS: Record<string, string> = {
+  "running": "🏃",
+  "cycling": "🚴",
+  "swimming": "🏊",
+  "yoga": "🧘",
+  "hiit": "🔥",
+  "strength training": "🏋️",
+  "weightlifting": "🏋️",
+  "crossfit": "💪",
+  "functional fitness": "💪",
+  "stretching": "🤸",
+  "pilates": "🤸",
+  "rowing": "🚣",
+  "hiking": "🥾",
+  "walking": "🚶",
+  "spinning": "🚴",
+  "cricket": "🏏",
+  "basketball": "🏀",
+  "soccer": "⚽",
+  "football": "🏈",
+  "tennis": "🎾",
+  "badminton": "🏸",
+  "baseball": "⚾",
+  "volleyball": "🏐",
+  "boxing": "🥊",
+  "martial arts": "🥋",
+  "dance": "💃",
+  "skiing": "⛷️",
+  "snowboarding": "🏂",
+  "surfing": "🏄",
+  "golf": "🏌️",
+  "table tennis": "🏓",
+}
+
+function sportIcon(sport: string): string {
+  return SPORT_ICONS[sport.toLowerCase()] ?? "🏅"
+}
+
 export default (() => {
   const WorkoutLog: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
     const workouts = loadWorkoutData()
 
     const recentWorkouts = [...workouts]
       .sort((a, b) => b.date.localeCompare(a.date))
-      .slice(0, 25)
+      .slice(0, 10)
 
     if (recentWorkouts.length === 0) return null
 
@@ -40,7 +78,7 @@ export default (() => {
             {recentWorkouts.map((w) => (
               <tr>
                 <td>{formatDate(w.date)}</td>
-                <td>{w.sport}</td>
+                <td>{sportIcon(w.sport)} {w.sport}</td>
                 <td>{w.strain.toFixed(1)}</td>
                 <td>{formatDuration(w.duration_mins)}</td>
                 <td>{w.calories}</td>
