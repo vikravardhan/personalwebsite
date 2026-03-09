@@ -128,7 +128,9 @@ function toWorkout(w: WhoopWorkout): Omit<Workout, "id"> {
 }
 
 async function main() {
+  const isBackfill = process.argv.includes("--backfill")
   const outPath = path.join(process.cwd(), "content", "workouts", "data.json")
+  const streakPath = path.join(process.cwd(), "content", "workouts", "streak.json")
 
   // Load existing workouts
   let existing: Workout[] = []
@@ -144,6 +146,17 @@ async function main() {
   if (ghOutput && newRefreshToken !== process.env.WHOOP_REFRESH_TOKEN) {
     fs.appendFileSync(ghOutput, `new_refresh_token=${newRefreshToken}\n`)
     console.log("Refresh token rotated — will update secret.")
+  }
+
+  if (isBackfill) {
+    // Backfill: fetch all workouts from Jan 1 of current year for streak.json
+    const jan1 = new Date(new Date().getFullYear(), 0, 1).toISOString()
+    console.log(`Backfilling all workouts since ${jan1}...`)
+    const all = await fetchWorkoutsSince(accessToken, jan1)
+    const dates = [...new Set(all.map((w) => w.start.split("T")[0]))].sort()
+    fs.writeFileSync(streakPath, JSON.stringify(dates, null, 2) + "\n")
+    console.log(`Backfill complete: ${dates.length} workout dates written to streak.json`)
+    return
   }
 
   // Fetch only workouts newer than the latest existing entry
@@ -178,7 +191,6 @@ async function main() {
   console.log(`Added ${unique.length} new workout(s). Total: ${merged.length}`)
 
   // Update streak.json — append new unique dates for the heatmap
-  const streakPath = path.join(process.cwd(), "content", "workouts", "streak.json")
   let streakDates: string[] = []
   if (fs.existsSync(streakPath)) {
     streakDates = JSON.parse(fs.readFileSync(streakPath, "utf-8")) as string[]

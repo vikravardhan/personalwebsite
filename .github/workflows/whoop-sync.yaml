@@ -3,7 +3,12 @@ name: Sync Whoop Workouts
 on:
   schedule:
     - cron: "0 6 * * *" # Daily at 6am UTC
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: "Backfill streak.json with all workouts from Jan 1"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -24,7 +29,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Backfill streak data
+        if: inputs.backfill == true
+        id: backfill
+        env:
+          WHOOP_CLIENT_ID: ${{ secrets.WHOOP_CLIENT_ID }}
+          WHOOP_CLIENT_SECRET: ${{ secrets.WHOOP_CLIENT_SECRET }}
+          WHOOP_REFRESH_TOKEN: ${{ secrets.WHOOP_REFRESH_TOKEN }}
+        run: npx tsx scripts/fetch-whoop.ts --backfill
+
+      - name: Update refresh token after backfill
+        if: inputs.backfill == true && steps.backfill.outputs.new_refresh_token
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: gh secret set WHOOP_REFRESH_TOKEN --body "${{ steps.backfill.outputs.new_refresh_token }}"
+
       - name: Fetch Whoop workouts
+        if: inputs.backfill != true
         id: fetch
         env:
           WHOOP_CLIENT_ID: ${{ secrets.WHOOP_CLIENT_ID }}
@@ -33,7 +54,7 @@ jobs:
         run: npx tsx scripts/fetch-whoop.ts
 
       - name: Update refresh token secret
-        if: always() && steps.fetch.outputs.new_refresh_token
+        if: always() && steps.fetch.outputs.new_refresh_token && inputs.backfill != true
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: gh secret set WHOOP_REFRESH_TOKEN --body "${{ steps.fetch.outputs.new_refresh_token }}"
