@@ -63,6 +63,7 @@ export default (() => {
 
     return (
       <div class={classNames(displayClass, "workout-log")}>
+        <hr />
         <h3>Recent Workouts</h3>
         <div class="workout-table-wrap">
         <table>
@@ -88,6 +89,7 @@ export default (() => {
           </tbody>
         </table>
         </div>
+        <hr />
       </div>
     )
   }
