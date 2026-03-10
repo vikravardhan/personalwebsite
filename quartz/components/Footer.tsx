@@ -15,6 +15,7 @@ export default ((opts?: Options) => {
       <footer class={`${displayClass ?? ""}`}>
         {showSubscribe && (
           <div class="footer-subscribe">
+            <hr />
             <p class="footer-subscribe__cta">Get new posts in your inbox</p>
             <div class="footer-subscribe__iframe-clip">
               <iframe
