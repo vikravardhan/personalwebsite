@@ -88,13 +88,6 @@ export default (() => {
           </tbody>
         </table>
         </div>
-        <div class="workout-note">
-          <p>
-            Every session is a vote for the person I'm becoming. Some days it's a heavy lift, other
-            days it's just showing up for a stretch — but the streak doesn't care about intensity, only
-            consistency. This log is my proof of work.
-          </p>
-        </div>
       </div>
     )
   }
