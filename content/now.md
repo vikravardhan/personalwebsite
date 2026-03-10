@@ -8,18 +8,14 @@ title: Now
 
 What I'm currently focused on. Inspired by [nownownow.com](https://nownownow.com).
 
-## Working on
+## LIVE from my life
 
-- [What you're building or doing professionally right now]
+- [What's happening in your life right now]
 
-## Learning
+## Successful Missions
 
-- [What you're trying to get better at]
+- [Things you've accomplished recently]
 
-## Reading
+## Failed Promises
 
-- [Book or article you're in the middle of]
-
-## Thinking about
-
-- [An idea, question, or problem you keep coming back to]
+- [Things you committed to but didn't follow through on]
