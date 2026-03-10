@@ -1,5 +1,6 @@
 ---
 title: Music
+hideMetadata: true
 ---
 
 # Music

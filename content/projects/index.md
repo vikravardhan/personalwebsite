@@ -1,5 +1,6 @@
 ---
 title: Projects
+hideMetadata: true
 ---
 
 # Projects

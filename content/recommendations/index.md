@@ -1,5 +1,6 @@
 ---
 title: Recommendations
+hideMetadata: true
 ---
 
 # Recommendations

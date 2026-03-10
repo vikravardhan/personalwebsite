@@ -1,5 +1,6 @@
 ---
 title: Hey, I am Vikra
+hideMetadata: true
 ---
 
 I don't know how to introduce myself without talking about my work, but here goes nothing.

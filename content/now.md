@@ -1,5 +1,6 @@
 ---
 title: Now
+hideMetadata: true
 ---
 
 # Now

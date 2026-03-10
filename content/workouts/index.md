@@ -1,5 +1,6 @@
 ---
 title: Workouts
+hideMetadata: true
 ---
 I was at my peak when I pursued cricket professionally.
 
