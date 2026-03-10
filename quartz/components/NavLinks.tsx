@@ -52,14 +52,15 @@ export default (() => {
     }
     @media (max-width: 800px) {
       .nav-links {
-        margin-top: 0;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--lightgray);
       }
       .nav-links ul {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.25rem 0.75rem;
+        gap: 0.2rem 0.75rem;
       }
       .nav-links li {
         margin: 0;
