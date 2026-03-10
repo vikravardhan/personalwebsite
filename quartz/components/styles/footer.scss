@@ -13,6 +13,10 @@ footer {
     justify-content: center;
   }
 
+  & a {
+    color: var(--darkgray);
+  }
+
   .footer-subscribe {
     display: flex;
     flex-direction: column;
