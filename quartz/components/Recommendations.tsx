@@ -143,7 +143,8 @@ export default (() => {
     }
     .rec-title a {
       color: var(--dark);
-      text-decoration: none;
+      text-decoration: underline;
+      font-weight: 400;
     }
     .rec-title a:hover {
       color: var(--secondary);
