@@ -98,11 +98,6 @@ a {
     text-decoration-thickness: 1px;
     padding: 0;
 
-    &::after {
-      content: " \2192";
-      font-size: 0.75em;
-    }
-
     &.broken {
       color: var(--secondary);
       opacity: 0.5;
