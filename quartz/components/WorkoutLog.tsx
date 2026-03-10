@@ -64,6 +64,7 @@ export default (() => {
     return (
       <div class={classNames(displayClass, "workout-log")}>
         <h3>Recent Workouts</h3>
+        <div class="workout-table-wrap">
         <table>
           <thead>
             <tr>
@@ -86,6 +87,7 @@ export default (() => {
             ))}
           </tbody>
         </table>
+        </div>
         <div class="workout-note">
           <p>
             Every session is a vote for the person I'm becoming. Some days it's a heavy lift, other
@@ -106,6 +108,10 @@ export default (() => {
       margin: 0 0 0.75rem;
       color: var(--darkgray);
     }
+    .workout-log .workout-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
     .workout-log table {
       width: 100%;
       border-collapse: collapse;
@@ -120,6 +126,7 @@ export default (() => {
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.03em;
+      white-space: nowrap;
     }
     .workout-log tbody tr {
       border-bottom: 1px solid var(--lightgray);
@@ -131,6 +138,7 @@ export default (() => {
     .workout-log tbody td {
       padding: 0.5rem 0.75rem;
       color: var(--darkgray);
+      white-space: nowrap;
     }
     .workout-log tbody td:nth-child(3) {
       font-weight: 600;
@@ -138,6 +146,15 @@ export default (() => {
     }
     [saved-theme="light"] .workout-log tbody td:nth-child(3) {
       color: #1a7f37;
+    }
+    @media (max-width: 800px) {
+      .workout-log table {
+        font-size: 0.78rem;
+      }
+      .workout-log thead th,
+      .workout-log tbody td {
+        padding: 0.4rem 0.5rem;
+      }
     }
     .workout-note {
       margin-top: 1.5rem;

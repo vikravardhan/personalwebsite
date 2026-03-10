@@ -119,11 +119,13 @@ export default (() => {
     }
     .streak-grid.active {
       display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
     .streak-weeks {
       display: grid;
       gap: 3px;
-      width: 100%;
+      min-width: max-content;
     }
     .streak-week {
       display: flex;
@@ -133,8 +135,15 @@ export default (() => {
     .streak-day {
       aspect-ratio: 1;
       width: 100%;
+      min-width: 10px;
       border-radius: 2px;
       background: var(--lightgray);
+    }
+    @media (max-width: 800px) {
+      .streak-header {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
     }
     .streak-day.level-1 { background: #0e4429; }
     .streak-day.level-2 { background: #006d32; }

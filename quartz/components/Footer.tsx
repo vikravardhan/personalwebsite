@@ -21,6 +21,7 @@ export default ((opts?: Options) => {
                 src="https://www.vikra.cafe/embed"
                 width="480"
                 height="160"
+                style="max-width: 100%;"
                 frameBorder="0"
                 scrolling="no"
               />

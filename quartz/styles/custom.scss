@@ -8,3 +8,45 @@ article td,
 article th {
   font-family: Georgia, "Times New Roman", serif;
 }
+
+// Mobile responsiveness improvements
+@media (max-width: 800px) {
+  .page > #quartz-body {
+    padding: 0 0.75rem;
+  }
+
+  article > h1 {
+    font-size: 1.5rem !important;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+  }
+
+  // Ensure tables in article content scroll
+  article .table-container,
+  article table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  // Better touch targets for links
+  footer ul {
+    flex-wrap: wrap;
+  }
+
+  // Recommendation filter buttons wrap nicely
+  .rec-filter-group {
+    gap: 0.3rem;
+  }
+
+  .rec-filter-btn {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}

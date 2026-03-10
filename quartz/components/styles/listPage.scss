@@ -14,8 +14,15 @@ li.section-li {
     grid-template-columns: fit-content(8em) 3fr 1fr;
 
     @media all and ($mobile) {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
+
       & > .tags {
         display: none;
+      }
+
+      & .meta {
+        font-size: 0.8rem;
       }
     }
 

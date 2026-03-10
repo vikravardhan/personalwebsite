@@ -147,11 +147,13 @@ export default (() => {
     }
     .workout-streak .streak-grid.active {
       display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
     .workout-weeks {
       display: grid;
       gap: 3px;
-      width: 100%;
+      min-width: max-content;
     }
     .workout-week {
       display: flex;
@@ -161,8 +163,15 @@ export default (() => {
     .workout-day {
       aspect-ratio: 1;
       width: 100%;
+      min-width: 10px;
       border-radius: 2px;
       background: var(--lightgray);
+    }
+    @media (max-width: 800px) {
+      .workout-streak .streak-header {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
     }
     .workout-day.active {
       background: #26a641;

@@ -50,6 +50,25 @@ export default (() => {
       opacity: 1;
       color: var(--secondary);
     }
+    @media (max-width: 800px) {
+      .nav-links {
+        margin-top: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .nav-links ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 0.75rem;
+      }
+      .nav-links li {
+        margin: 0;
+      }
+      .nav-links a {
+        font-size: 0.85rem;
+        white-space: nowrap;
+      }
+    }
   `
 
   return NavLinks
