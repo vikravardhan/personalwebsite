@@ -93,11 +93,15 @@ a {
   }
 
   &.internal {
-    text-decoration: none;
-    background-color: var(--highlight);
-    padding: 0 0.1rem;
-    border-radius: 5px;
-    line-height: 1.4rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    padding: 0;
+
+    &::after {
+      content: " \2197";
+      font-size: 0.75em;
+    }
 
     &.broken {
       color: var(--secondary);
