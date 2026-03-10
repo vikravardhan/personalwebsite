@@ -5,7 +5,6 @@ import { resolveRelative, SimpleSlug } from "../util/path"
 export default (() => {
   const NavLinks: QuartzComponent = ({ displayClass, fileData }: QuartzComponentProps) => {
     const links: { text: string; slug: SimpleSlug }[] = [
-      { text: "About", slug: "about" as SimpleSlug },
       { text: "Projects", slug: "projects" as SimpleSlug },
       { text: "Writing", slug: "writing" as SimpleSlug },
       { text: "Workouts", slug: "workouts" as SimpleSlug },
