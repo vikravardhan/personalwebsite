@@ -3,8 +3,6 @@ title: Music
 hideMetadata: true
 ---
 
-# Music
-
 I am glad music exists in this world.
 
 Irrespective of situations, music has been my friend in all kinds of emotions. I am sure I am not the only who feels this way.

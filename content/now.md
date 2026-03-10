@@ -3,8 +3,6 @@ title: Now
 hideMetadata: true
 ---
 
-# Now
-
 *Last updated: 10th March 2026*
 
 I believe in _small wins create momentum_.

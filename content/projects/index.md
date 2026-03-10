@@ -3,8 +3,6 @@ title: Projects
 hideMetadata: true
 ---
 
-# Projects
-
 I consider myself lucky to enjoy what I do for work.
 
 But when you are passionate, new project syndrome is real. You always want to build things and sometimes you lack execution, skill, or understanding market.
