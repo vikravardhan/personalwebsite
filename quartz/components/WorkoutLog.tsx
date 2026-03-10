@@ -63,7 +63,6 @@ export default (() => {
 
     return (
       <div class={classNames(displayClass, "workout-log")}>
-        <hr />
         <h3>Recent Workouts</h3>
         <div class="workout-table-wrap">
         <table>
@@ -89,7 +88,6 @@ export default (() => {
           </tbody>
         </table>
         </div>
-        <hr />
       </div>
     )
   }
@@ -97,6 +95,7 @@ export default (() => {
   WorkoutLog.css = `
     .workout-log {
       margin-top: 1rem;
+      margin-bottom: 3rem;
     }
     .workout-log h3 {
       font-size: 1rem;
