@@ -126,6 +126,10 @@ a {
 
 .flex-component {
   display: flex;
+  @media all and ($mobile) {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .desktop-only {
