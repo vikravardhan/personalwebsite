@@ -7,11 +7,14 @@ export default (() => {
       (f) => f.slug?.startsWith("writing/") && !f.slug.endsWith("index"),
     )
 
+    const fmt = (d: Date) =>
+      `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
+
     const dateMap = new Map<string, number>()
     writingFiles.forEach((f) => {
       const date = f.dates?.published ?? f.dates?.created
       if (date) {
-        const key = date.toISOString().split("T")[0]
+        const key = fmt(date)
         dateMap.set(key, (dateMap.get(key) ?? 0) + 1)
       }
     })
@@ -20,6 +23,10 @@ export default (() => {
     const yearsInData = [...new Set([...dateMap.keys()].map((d) => parseInt(d.slice(0, 4))))]
     const years = [...new Set([currentYear, ...yearsInData])].sort((a, b) => b - a)
 
+    const todayStr = fmt(new Date())
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    const dayLabels = ["Mon", "", "Wed", "", "Fri", "", ""]
+
     const renderGrid = (year: number) => {
       const jan1 = new Date(year, 0, 1)
       const daysBack = (jan1.getDay() + 6) % 7
@@ -27,30 +34,86 @@ export default (() => {
       start.setDate(jan1.getDate() - daysBack)
       const dec31 = new Date(year, 11, 31)
 
-      const weeks = []
+      // First pass: collect all weeks to compute month label positions
+      const weeksData: { dateStr: string; inYear: boolean; count: number; month: number }[][] = []
       const current = new Date(start)
 
       while (current <= dec31) {
-        const days = []
+        const days: typeof weeksData[0] = []
         for (let d = 0; d < 7; d++) {
-          const dateStr = current.toISOString().split("T")[0]
+          const dateStr = fmt(current)
           const inYear = current.getFullYear() === year
           const count = inYear ? (dateMap.get(dateStr) ?? 0) : 0
-          const level = !inYear || count === 0 ? 0 : count === 1 ? 1 : count <= 3 ? 2 : count <= 5 ? 3 : 4
-          days.push(
-            <div
-              class={`streak-day level-${level}`}
-              title={inYear ? `${dateStr}${count > 0 ? `: ${count} post${count !== 1 ? "s" : ""}` : ""}` : ""}
-            />,
-          )
+          days.push({ dateStr, inYear, count, month: current.getMonth() })
           current.setDate(current.getDate() + 1)
         }
-        weeks.push(<div class="streak-week">{days}</div>)
+        weeksData.push(days)
       }
 
+      // Build month labels: find the first week where each month's Monday falls
+      const monthLabels: { month: number; weekIndex: number }[] = []
+      let lastMonth = -1
+      for (let w = 0; w < weeksData.length; w++) {
+        const monday = weeksData[w][0]
+        if (monday.inYear && monday.month !== lastMonth) {
+          lastMonth = monday.month
+          monthLabels.push({ month: monday.month, weekIndex: w })
+        }
+      }
+
+      const weeks = weeksData.map((week) => {
+        const days = week.map(({ dateStr, inYear, count }) => {
+          const level = !inYear || count === 0 ? 0 : count === 1 ? 1 : count <= 3 ? 2 : count <= 5 ? 3 : 4
+          const isToday = dateStr === todayStr
+          return (
+            <div
+              class={`streak-day level-${level}${isToday ? " today" : ""}`}
+              title={inYear ? `${dateStr}${count > 0 ? `: ${count} post${count !== 1 ? "s" : ""}` : ""}` : ""}
+            />
+          )
+        })
+        return <div class="streak-week">{days}</div>
+      })
+
+      const totalWeeks = weeks.length
+
       return (
-        <div class="streak-weeks" style={`grid-template-columns: repeat(${weeks.length}, 1fr)`}>
-          {weeks}
+        <div class="streak-grid-container">
+          {/* Month labels row */}
+          <div class="streak-month-row" style={`grid-template-columns: 28px repeat(${totalWeeks}, 1fr)`}>
+            <div />
+            {(() => {
+              const cells: preact.JSX.Element[] = []
+              for (let i = 0; i < monthLabels.length; i++) {
+                const start = monthLabels[i].weekIndex
+                const end = i + 1 < monthLabels.length ? monthLabels[i + 1].weekIndex : totalWeeks
+                const span = end - start
+                cells.push(
+                  <span class="streak-month-label" style={`grid-column: span ${span}`}>
+                    {monthNames[monthLabels[i].month]}
+                  </span>,
+                )
+              }
+              // Fill any leading empty weeks before first month label
+              if (monthLabels.length > 0 && monthLabels[0].weekIndex > 0) {
+                cells.unshift(
+                  <span style={`grid-column: span ${monthLabels[0].weekIndex}`} />,
+                )
+              }
+              return cells
+            })()}
+          </div>
+          {/* Grid with day labels */}
+          <div class="streak-grid-inner">
+            <div class="streak-day-labels">
+              {dayLabels.map((label) => (
+                <span class="streak-day-label">{label}</span>
+              ))}
+            </div>
+            <div class="streak-weeks" style={`grid-template-columns: repeat(${totalWeeks}, 1fr)`}>
+              {weeks}
+            </div>
+          </div>
         </div>
       )
     }
@@ -119,13 +182,46 @@ export default (() => {
     }
     .streak-grid.active {
       display: block;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+    }
+    .streak-grid-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .streak-month-row {
+      display: grid;
+      gap: 3px;
+      font-size: 0.7rem;
+      color: var(--gray);
+    }
+    .streak-month-label {
+      text-align: left;
+      overflow: hidden;
+    }
+    .streak-grid-inner {
+      display: flex;
+      gap: 4px;
+    }
+    .streak-day-labels {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      flex-shrink: 0;
+      width: 24px;
+    }
+    .streak-day-label {
+      font-size: 0.6rem;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      flex: 1;
+      line-height: 1;
     }
     .streak-weeks {
       display: grid;
       gap: 3px;
-      min-width: max-content;
+      flex: 1;
+      min-width: 0;
     }
     .streak-week {
       display: flex;
@@ -135,9 +231,13 @@ export default (() => {
     .streak-day {
       aspect-ratio: 1;
       width: 100%;
-      min-width: 10px;
       border-radius: 2px;
       background: var(--lightgray);
+    }
+    .streak-day.today {
+      outline: 2px solid var(--darkgray);
+      outline-offset: -1px;
+      border-radius: 2px;
     }
     @media (max-width: 800px) {
       .streak-header {

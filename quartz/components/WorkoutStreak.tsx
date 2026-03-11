@@ -39,9 +39,16 @@ export default (() => {
     // Build date set for streak
     const dateSet = new Set(streakDates)
 
+    const fmt = (d: Date) =>
+      `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
+
     const currentYear = new Date().getFullYear()
     const yearsInData = [...new Set(streakDates.map((d) => parseInt(d.slice(0, 4))))]
     const years = [...new Set([currentYear, ...yearsInData])].sort((a, b) => b - a)
+
+    const todayStr = fmt(new Date())
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    const dayLabels = ["Mon", "", "Wed", "", "Fri", "", ""]
 
     const renderGrid = (year: number) => {
       const jan1 = new Date(year, 0, 1)
@@ -50,33 +57,81 @@ export default (() => {
       start.setDate(jan1.getDate() - daysBack)
       const dec31 = new Date(year, 11, 31)
 
-      const weeks = []
+      const weeksData: { dateStr: string; inYear: boolean; hasWorkout: boolean; month: number }[][] = []
       const current = new Date(start)
 
       while (current <= dec31) {
-        const days = []
+        const days: typeof weeksData[0] = []
         for (let d = 0; d < 7; d++) {
-          const dateStr = current.toISOString().split("T")[0]
+          const dateStr = fmt(current)
           const inYear = current.getFullYear() === year
           const hasWorkout = inYear && dateSet.has(dateStr)
-          days.push(
-            <div
-              class={`workout-day${hasWorkout ? " active" : ""}`}
-              title={
-                inYear
-                  ? `${dateStr}${hasWorkout ? ": Workout" : ""}`
-                  : ""
-              }
-            />,
-          )
+          days.push({ dateStr, inYear, hasWorkout, month: current.getMonth() })
           current.setDate(current.getDate() + 1)
         }
-        weeks.push(<div class="workout-week">{days}</div>)
+        weeksData.push(days)
       }
 
+      // Build month labels
+      const monthLabels: { month: number; weekIndex: number }[] = []
+      let lastMonth = -1
+      for (let w = 0; w < weeksData.length; w++) {
+        const monday = weeksData[w][0]
+        if (monday.inYear && monday.month !== lastMonth) {
+          lastMonth = monday.month
+          monthLabels.push({ month: monday.month, weekIndex: w })
+        }
+      }
+
+      const weeks = weeksData.map((week) => {
+        const days = week.map(({ dateStr, inYear, hasWorkout }) => {
+          const isToday = dateStr === todayStr
+          return (
+            <div
+              class={`workout-day${hasWorkout ? " active" : ""}${isToday ? " today" : ""}`}
+              title={inYear ? `${dateStr}${hasWorkout ? ": Workout" : ""}` : ""}
+            />
+          )
+        })
+        return <div class="workout-week">{days}</div>
+      })
+
+      const totalWeeks = weeks.length
+
       return (
-        <div class="workout-weeks" style={`grid-template-columns: repeat(${weeks.length}, 1fr)`}>
-          {weeks}
+        <div class="workout-grid-container">
+          <div class="workout-month-row" style={`grid-template-columns: 28px repeat(${totalWeeks}, 1fr)`}>
+            <div />
+            {(() => {
+              const cells: preact.JSX.Element[] = []
+              for (let i = 0; i < monthLabels.length; i++) {
+                const start = monthLabels[i].weekIndex
+                const end = i + 1 < monthLabels.length ? monthLabels[i + 1].weekIndex : totalWeeks
+                const span = end - start
+                cells.push(
+                  <span class="workout-month-label" style={`grid-column: span ${span}`}>
+                    {monthNames[monthLabels[i].month]}
+                  </span>,
+                )
+              }
+              if (monthLabels.length > 0 && monthLabels[0].weekIndex > 0) {
+                cells.unshift(
+                  <span style={`grid-column: span ${monthLabels[0].weekIndex}`} />,
+                )
+              }
+              return cells
+            })()}
+          </div>
+          <div class="workout-grid-inner">
+            <div class="workout-day-labels">
+              {dayLabels.map((label) => (
+                <span class="workout-day-label">{label}</span>
+              ))}
+            </div>
+            <div class="workout-weeks" style={`grid-template-columns: repeat(${totalWeeks}, 1fr)`}>
+              {weeks}
+            </div>
+          </div>
         </div>
       )
     }
@@ -85,14 +140,35 @@ export default (() => {
       <div class={classNames(displayClass, "workout-streak")}>
         <div class="streak-header">
           <span class="streak-label">
-            {streakDates.length} workout{streakDates.length !== 1 ? "s" : ""}
+            {(() => {
+              const y = years[0]
+              const count = streakDates.filter((d) => d.startsWith(String(y))).length
+              const now = new Date()
+              const yearStart = new Date(y, 0, 1)
+              const yearEnd = new Date(y, 11, 31)
+              const end = now.getFullYear() === y ? now : yearEnd
+              const days = Math.floor((end.getTime() - yearStart.getTime()) / 86400000) + 1
+              return `${count} workout${count !== 1 ? "s" : ""} in ${days} days in ${y}`
+            })()}
           </span>
           <div class="streak-year-tabs">
-            {years.map((year, i) => (
-              <button class={`streak-tab${i === 0 ? " active" : ""}`} data-year={String(year)}>
-                {year}
-              </button>
-            ))}
+            {years.map((year, i) => {
+              const count = streakDates.filter((d) => d.startsWith(String(year))).length
+              const now = new Date()
+              const yearStart = new Date(year, 0, 1)
+              const yearEnd = new Date(year, 11, 31)
+              const end = now.getFullYear() === year ? now : yearEnd
+              const days = Math.floor((end.getTime() - yearStart.getTime()) / 86400000) + 1
+              return (
+                <button
+                  class={`streak-tab${i === 0 ? " active" : ""}`}
+                  data-year={String(year)}
+                  data-label={`${count} workout${count !== 1 ? "s" : ""} in ${days} days in ${year}`}
+                >
+                  {year}
+                </button>
+              )
+            })}
           </div>
         </div>
         {years.map((year, i) => (
@@ -147,13 +223,46 @@ export default (() => {
     }
     .workout-streak .streak-grid.active {
       display: block;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+    }
+    .workout-grid-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .workout-month-row {
+      display: grid;
+      gap: 3px;
+      font-size: 0.7rem;
+      color: var(--gray);
+    }
+    .workout-month-label {
+      text-align: left;
+      overflow: hidden;
+    }
+    .workout-grid-inner {
+      display: flex;
+      gap: 4px;
+    }
+    .workout-day-labels {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      flex-shrink: 0;
+      width: 24px;
+    }
+    .workout-day-label {
+      font-size: 0.6rem;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      flex: 1;
+      line-height: 1;
     }
     .workout-weeks {
       display: grid;
       gap: 3px;
-      min-width: max-content;
+      flex: 1;
+      min-width: 0;
     }
     .workout-week {
       display: flex;
@@ -163,9 +272,13 @@ export default (() => {
     .workout-day {
       aspect-ratio: 1;
       width: 100%;
-      min-width: 10px;
       border-radius: 2px;
       background: var(--lightgray);
+    }
+    .workout-day.today {
+      outline: 2px solid var(--darkgray);
+      outline-offset: -1px;
+      border-radius: 2px;
     }
     @media (max-width: 800px) {
       .workout-streak .streak-header {
@@ -199,6 +312,8 @@ export default (() => {
         tab.classList.add("active");
         var grid = container.querySelector('.streak-grid[data-year="' + year + '"]');
         if (grid) grid.classList.add("active");
+        var label = tab.getAttribute("data-label");
+        if (label) container.querySelector(".streak-label").textContent = label;
       });
     });
   `
