@@ -163,43 +163,45 @@ export default (() => {
   `
 
   Recommendations.afterDOMLoaded = `
-    const container = document.querySelector(".recommendations")
-    if (container) {
-      let activeType = "all"
-      let activeYear = "all"
+    document.addEventListener("nav", () => {
+      const container = document.querySelector(".recommendations")
+      if (container) {
+        let activeType = "all"
+        let activeYear = "all"
 
-      const cards = container.querySelectorAll(".rec-card")
-      const emptyMsg = container.querySelector(".rec-empty")
+        const cards = container.querySelectorAll(".rec-card")
+        const emptyMsg = container.querySelector(".rec-empty")
 
-      function applyFilters() {
-        let visible = 0
-        cards.forEach(card => {
-          const matchType = activeType === "all" || card.dataset.type === activeType
-          const matchYear = activeYear === "all" || card.dataset.year === activeYear
-          const show = matchType && matchYear
-          card.classList.toggle("hidden", !show)
-          if (show) visible++
+        function applyFilters() {
+          let visible = 0
+          cards.forEach(card => {
+            const matchType = activeType === "all" || card.dataset.type === activeType
+            const matchYear = activeYear === "all" || card.dataset.year === activeYear
+            const show = matchType && matchYear
+            card.classList.toggle("hidden", !show)
+            if (show) visible++
+          })
+          if (emptyMsg) emptyMsg.style.display = visible === 0 ? "block" : "none"
+        }
+
+        container.querySelectorAll(".rec-filter-btn").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const filterType = btn.dataset.filterType
+            const value = btn.dataset.filter
+
+            // Update active state within same group
+            const group = btn.closest(".rec-filter-group")
+            group.querySelectorAll(".rec-filter-btn").forEach(b => b.classList.remove("active"))
+            btn.classList.add("active")
+
+            if (filterType === "type") activeType = value
+            else activeYear = value
+
+            applyFilters()
+          })
         })
-        if (emptyMsg) emptyMsg.style.display = visible === 0 ? "block" : "none"
       }
-
-      container.querySelectorAll(".rec-filter-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const filterType = btn.dataset.filterType
-          const value = btn.dataset.filter
-
-          // Update active state within same group
-          const group = btn.closest(".rec-filter-group")
-          group.querySelectorAll(".rec-filter-btn").forEach(b => b.classList.remove("active"))
-          btn.classList.add("active")
-
-          if (filterType === "type") activeType = value
-          else activeYear = value
-
-          applyFilters()
-        })
-      })
-    }
+    })
   `
 
   return Recommendations

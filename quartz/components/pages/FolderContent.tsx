@@ -171,25 +171,27 @@ export default ((opts?: Partial<FolderContentOptions>) => {
   FolderContent.css = concatenateResources(style, PageList.css, writingFilterCss)
 
   FolderContent.afterDOMLoaded = `
-    const filterContainer = document.querySelector(".writing-filters")
-    if (filterContainer) {
-      const items = document.querySelectorAll(".section-li")
-      filterContainer.querySelectorAll(".writing-filter-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const filter = btn.dataset.filter
-          filterContainer.querySelectorAll(".writing-filter-btn").forEach(b => b.classList.remove("active"))
-          btn.classList.add("active")
-          items.forEach(item => {
-            if (filter === "all") {
-              item.style.display = ""
-            } else {
-              const tags = (item.dataset.tags || "").split(",")
-              item.style.display = tags.includes(filter) ? "" : "none"
-            }
+    document.addEventListener("nav", () => {
+      const filterContainer = document.querySelector(".writing-filters")
+      if (filterContainer) {
+        const items = document.querySelectorAll(".section-li")
+        filterContainer.querySelectorAll(".writing-filter-btn").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const filter = btn.dataset.filter
+            filterContainer.querySelectorAll(".writing-filter-btn").forEach(b => b.classList.remove("active"))
+            btn.classList.add("active")
+            items.forEach(item => {
+              if (filter === "all") {
+                item.style.display = ""
+              } else {
+                const tags = (item.dataset.tags || "").split(",")
+                item.style.display = tags.includes(filter) ? "" : "none"
+              }
+            })
           })
         })
-      })
-    }
+      }
+    })
   `
 
   return FolderContent
