@@ -60,6 +60,7 @@ export default (() => {
         display: flex;
         flex-wrap: wrap;
         gap: 0.2rem 0.75rem;
+        justify-content: center;
       }
       .nav-links li {
         margin: 0;
