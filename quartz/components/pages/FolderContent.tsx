@@ -102,9 +102,26 @@ export default ((opts?: Partial<FolderContentOptions>) => {
         : htmlToJsx(fileData.filePath!, tree)
     ) as ComponentChildren
 
+    const isWritingFolder = (fileData.slug ?? "").startsWith("writing")
+    const writingTags = ["business", "health", "life", "hobbies", "recommendations"]
+
     return (
       <div class="popover-hint">
         <article class={classes}>{content}</article>
+        {isWritingFolder && (
+          <div class="writing-filters">
+            <div class="writing-filter-group">
+              <button class="writing-filter-btn active" data-filter="all">
+                All
+              </button>
+              {writingTags.map((tag) => (
+                <button class="writing-filter-btn" data-filter={tag}>
+                  {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
         <div class="page-listing">
           {options.showFolderCount && (
             <p>
@@ -121,6 +138,59 @@ export default ((opts?: Partial<FolderContentOptions>) => {
     )
   }
 
-  FolderContent.css = concatenateResources(style, PageList.css)
+  const writingFilterCss = `
+    .writing-filters {
+      margin-bottom: 1.5rem;
+    }
+    .writing-filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .writing-filter-btn {
+      background: transparent;
+      border: 1px solid var(--lightgray);
+      border-radius: 2rem;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.8rem;
+      color: var(--darkgray);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .writing-filter-btn:hover {
+      border-color: var(--secondary);
+      color: var(--secondary);
+    }
+    .writing-filter-btn.active {
+      background: var(--secondary);
+      border-color: var(--secondary);
+      color: var(--light);
+    }
+  `
+  FolderContent.css = concatenateResources(style, PageList.css, writingFilterCss)
+
+  FolderContent.afterDOMLoaded = `
+    const filterContainer = document.querySelector(".writing-filters")
+    if (filterContainer) {
+      const items = document.querySelectorAll(".section-li")
+      filterContainer.querySelectorAll(".writing-filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const filter = btn.dataset.filter
+          filterContainer.querySelectorAll(".writing-filter-btn").forEach(b => b.classList.remove("active"))
+          btn.classList.add("active")
+          items.forEach(item => {
+            if (filter === "all") {
+              item.style.display = ""
+            } else {
+              const tags = (item.dataset.tags || "").split(",")
+              item.style.display = tags.includes(filter) ? "" : "none"
+            }
+          })
+        })
+      })
+    }
+  `
+
   return FolderContent
 }) satisfies QuartzComponentConstructor
