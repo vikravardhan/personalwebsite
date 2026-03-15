@@ -22,7 +22,7 @@ What I am upto in a window of 30-45 days:
 
 ## Successful Missions
 
-- ~~I quit sugar for 60 days~~
+- ~~[[I cut all sugar for 60 days]]~~.
 - ~~Run 50 kms in 30 days~~
 - ~~Run 35 kms in 30 days~~
 
