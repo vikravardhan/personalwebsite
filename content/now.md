@@ -3,7 +3,7 @@ title: Now
 hideMetadata: true
 ---
 
-*Last updated: 14th March 2026*
+*Last updated: 21st March 2026*
 
 I believe in _small wins create momentum_.
 
@@ -14,8 +14,8 @@ What I am upto in a window of 30-45 days:
 
 ## LIVE from my life
 
-- Book: Reframe Your Mind by Scott Adams | 132/230 pages
-- Anime: Dragon Ball Z | 82/291 episodes
+- Book: Tiny Experiments by Anne-Laure Le Cunff | 38/298 pages
+- Anime: Dragon Ball Z | 121/291 episodes
 - 50 pushups | PR: 40
 - 5 minute plank | PR: 1:01
 - 200 squats | PR: 30
