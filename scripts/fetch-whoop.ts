@@ -86,9 +86,13 @@ async function fetchWorkoutsSince(accessToken: string, since: string): Promise<W
 
     const data = (await res.json()) as { records: WhoopWorkout[]; next_token?: string }
     const IGNORED_SPORTS = ["commuting"]
-    const scored = data.records.filter(
-      (w) => w.score_state === "SCORED" && w.score && !IGNORED_SPORTS.includes(w.sport_name?.toLowerCase())
-    )
+    const MIN_WALKING_MINS = 30
+    const scored = data.records.filter((w) => {
+      if (w.score_state !== "SCORED" || !w.score) return false
+      if (IGNORED_SPORTS.includes(w.sport_name?.toLowerCase())) return false
+      if (w.sport_name?.toLowerCase() === "walking" && durationMins(w.start, w.end) < MIN_WALKING_MINS) return false
+      return true
+    })
     allWorkouts.push(...scored)
 
     if (!data.next_token) break
