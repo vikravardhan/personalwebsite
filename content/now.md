@@ -3,7 +3,7 @@ title: Now
 hideMetadata: true
 ---
 
-*Last updated: 30th March 2026*
+*Last updated: 8th April 2026*
 
 I believe in _small wins create momentum_.
 
@@ -13,11 +13,11 @@ What I am upto in a window of 30-45 days (before 15th April):
 
 ## LIVE from my life
 
-- Book: Tiny Experiments by Anne-Laure Le Cunff | 54/298 pages
-- Anime: Dragon Ball Z | 179/291 episodes
+- Book: Tiny Experiments by Anne-Laure Le Cunff | 114/298 pages
+- Anime: Dragon Ball Z | 189/291 episodes
 - 50 pushups | PR: 40
-- 5 minute plank | PR: 1:01
-- 200 squats | PR: 44
+- 2 minute plank | PR: 1:01
+- 100 squats | PR: 44
 
 ## Successful Missions
 

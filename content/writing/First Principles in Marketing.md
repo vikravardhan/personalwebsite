@@ -18,7 +18,7 @@ These sentences work as my baseline of operations. This is how I view the world 
 - The right packaging makes a good offer look great. But not always make an average offer look good.
 - People are smart. The amount of content they consume improves their eye for quality and sensing BS. So if you think you will get away by mincing words, good luck fooling yourself.
 - Good marketers know they have poor memory. So they document and create libraries for reference.
-- Always overdeliver. My favourite hack is to sell a product for $80 if it’s worth $100. Some people call it undervaluing. I call it consciously overdelivering. Imagine buyers feeling “This is a steal” after consuming your product.
+- Always overdeliver. My favourite hack is to sell a product for \$80 if it’s worth \$100. Some people call it undervaluing. I call it consciously overdelivering. Imagine buyers feeling “This is a steal” after consuming your product.
 - Good marketers are data people. They read numbers, understand baselines, and drive insights from theories, not theses. I am not saying they take ‘analytical’ decisions per se, but numbers become a crucial dataset for their intuition’s source code.
 - Functionality in marketing needs more celebration. We always applaud creative copy and viral ads. But never the silent, incremental blogs or compounding YouTube videos that consistently bring traffic and leads. When you understand how functionality (getting the job done without necessarily looking cool) works, you unlock a new level in your marketing game.
 
