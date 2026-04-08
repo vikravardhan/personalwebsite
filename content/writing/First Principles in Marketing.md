@@ -2,7 +2,6 @@
 title: First Principles in Marketing
 published: 2026-04-08
 tags:
-  - marketing
   - business
 ---
 
