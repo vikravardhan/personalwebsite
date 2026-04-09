@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-04-08",
+    "sport": "Running",
+    "strain": 9.6,
+    "duration_mins": 16,
+    "calories": 218,
+    "avg_hr": 155,
+    "max_hr": 184,
+    "id": 1
+  },
+  {
     "date": "2026-04-07",
     "sport": "Hiit",
     "strain": 8.6,
@@ -7,7 +17,7 @@
     "calories": 207,
     "avg_hr": 123,
     "max_hr": 171,
-    "id": 1
+    "id": 2
   },
   {
     "date": "2026-04-02",
@@ -17,7 +27,7 @@
     "calories": 2468,
     "avg_hr": 142,
     "max_hr": 193,
-    "id": 2
+    "id": 3
   },
   {
     "date": "2026-04-01",
@@ -27,7 +37,7 @@
     "calories": 353,
     "avg_hr": 146,
     "max_hr": 180,
-    "id": 3
+    "id": 4
   },
   {
     "date": "2026-03-30",
@@ -37,7 +47,7 @@
     "calories": 146,
     "avg_hr": 121,
     "max_hr": 171,
-    "id": 4
+    "id": 5
   },
   {
     "date": "2026-03-29",
@@ -47,7 +57,7 @@
     "calories": 234,
     "avg_hr": 124,
     "max_hr": 173,
-    "id": 5
+    "id": 6
   },
   {
     "date": "2026-03-25",
@@ -57,7 +67,7 @@
     "calories": 442,
     "avg_hr": 131,
     "max_hr": 184,
-    "id": 6
+    "id": 7
   },
   {
     "date": "2026-03-20",
@@ -67,7 +77,7 @@
     "calories": 129,
     "avg_hr": 124,
     "max_hr": 151,
-    "id": 7
+    "id": 8
   },
   {
     "date": "2026-03-19",
@@ -77,7 +87,7 @@
     "calories": 94,
     "avg_hr": 124,
     "max_hr": 145,
-    "id": 8
+    "id": 9
   },
   {
     "date": "2026-03-19",
@@ -87,16 +97,6 @@
     "calories": 633,
     "avg_hr": 166,
     "max_hr": 196,
-    "id": 9
-  },
-  {
-    "date": "2026-03-19",
-    "sport": "Walking",
-    "strain": 6.8,
-    "duration_mins": 15,
-    "calories": 154,
-    "avg_hr": 137,
-    "max_hr": 173,
     "id": 10
   }
 ]
