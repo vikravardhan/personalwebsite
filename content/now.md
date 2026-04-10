@@ -3,7 +3,7 @@ title: Now
 hideMetadata: true
 ---
 
-*Last updated: 8th April 2026*
+*Last updated: 10th April 2026*
 
 I believe in _small wins create momentum_.
 
@@ -18,6 +18,7 @@ What I am upto in a window of 30-45 days (before 15th April):
 - 50 pushups | PR: 40
 - 2 minute plank | PR: 1:01
 - 100 squats | PR: 44
+- No sugar for 6 months | Progress: 20/180 days
 
 ## Successful Missions
 

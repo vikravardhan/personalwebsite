@@ -2,6 +2,7 @@ import { Root } from "hast"
 import { GlobalConfiguration } from "../../cfg"
 import { getDate } from "../../components/Date"
 import { escapeHTML } from "../../util/escape"
+import path from "path"
 import { FilePath, FullSlug, SimpleSlug, joinSegments, simplifySlug } from "../../util/path"
 import { QuartzEmitterPlugin } from "../types"
 import { toHtml } from "hast-util-to-html"
@@ -116,6 +117,23 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
             date: date,
             description: file.data.description ?? "",
           })
+        }
+      }
+
+      // Auto-link folder index pages to their direct child pages
+      for (const [slug, content] of linkIndex) {
+        if (slug.endsWith("/index")) {
+          const folder = path.dirname(slug)
+          const existingLinks = new Set(content.links.map(String))
+          for (const [childSlug] of linkIndex) {
+            if (
+              childSlug !== slug &&
+              path.dirname(childSlug) === folder &&
+              !existingLinks.has(simplifySlug(childSlug))
+            ) {
+              content.links.push(simplifySlug(childSlug))
+            }
+          }
         }
       }
 
