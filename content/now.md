@@ -3,22 +3,22 @@ title: Now
 hideMetadata: true
 ---
 
-*Last updated: 10th April 2026*
+*Last updated: 17th April 2026*
 
 I believe in _small wins create momentum_.
 
 So I self impose short-lived challenges to always _do hard things_. I make sure my tiny experiments are not longer than a 100 days.
 
-What I am upto in a window of 30-45 days (before 15th April):
+What I am upto in a window of 30-45 days (before 25th April):
 
 ## LIVE from my life
 
-- Book: Tiny Experiments by Anne-Laure Le Cunff | 114/298 pages
+- Book: Tiny Experiments by Anne-Laure Le Cunff | 175/298 pages
 - Anime: Dragon Ball Z | 189/291 episodes
 - 50 pushups | PR: 40
 - 2 minute plank | PR: 1:01
-- 100 squats | PR: 44
-- No sugar for 6 months | Progress: 20/180 days
+- 100 squats | PR: 50
+- No sugar for 6 months | Progress: 26/180 days
 
 ## Successful Missions
 
