@@ -1,5 +1,55 @@
 [
   {
+    "date": "2026-05-02",
+    "sport": "Table-Tennis",
+    "strain": 5.8,
+    "duration_mins": 18,
+    "calories": 135,
+    "avg_hr": 122,
+    "max_hr": 158,
+    "id": 1
+  },
+  {
+    "date": "2026-05-01",
+    "sport": "Hiking-Rucking",
+    "strain": 5.2,
+    "duration_mins": 36,
+    "calories": 117,
+    "avg_hr": 99,
+    "max_hr": 138,
+    "id": 2
+  },
+  {
+    "date": "2026-05-01",
+    "sport": "Hiking-Rucking",
+    "strain": 6.1,
+    "duration_mins": 42,
+    "calories": 203,
+    "avg_hr": 108,
+    "max_hr": 140,
+    "id": 3
+  },
+  {
+    "date": "2026-05-01",
+    "sport": "Hiking-Rucking",
+    "strain": 9.7,
+    "duration_mins": 136,
+    "calories": 552,
+    "avg_hr": 104,
+    "max_hr": 153,
+    "id": 4
+  },
+  {
+    "date": "2026-05-01",
+    "sport": "Hiking-Rucking",
+    "strain": 14.9,
+    "duration_mins": 240,
+    "calories": 1429,
+    "avg_hr": 114,
+    "max_hr": 159,
+    "id": 5
+  },
+  {
     "date": "2026-04-30",
     "sport": "Table-Tennis",
     "strain": 5,
@@ -7,7 +57,7 @@
     "calories": 82,
     "avg_hr": 118,
     "max_hr": 150,
-    "id": 1
+    "id": 6
   },
   {
     "date": "2026-04-29",
@@ -17,7 +67,7 @@
     "calories": 1349,
     "avg_hr": 135,
     "max_hr": 193,
-    "id": 2
+    "id": 7
   },
   {
     "date": "2026-04-29",
@@ -27,7 +77,7 @@
     "calories": 142,
     "avg_hr": 132,
     "max_hr": 155,
-    "id": 3
+    "id": 8
   },
   {
     "date": "2026-04-29",
@@ -37,7 +87,7 @@
     "calories": 361,
     "avg_hr": 139,
     "max_hr": 182,
-    "id": 4
+    "id": 9
   },
   {
     "date": "2026-04-28",
@@ -46,56 +96,6 @@
     "duration_mins": 51,
     "calories": 270,
     "avg_hr": 105,
-    "max_hr": 160,
-    "id": 5
-  },
-  {
-    "date": "2026-04-28",
-    "sport": "Table-Tennis",
-    "strain": 6.3,
-    "duration_mins": 26,
-    "calories": 167,
-    "avg_hr": 109,
-    "max_hr": 171,
-    "id": 6
-  },
-  {
-    "date": "2026-04-27",
-    "sport": "Hiking-Rucking",
-    "strain": 5.6,
-    "duration_mins": 22,
-    "calories": 140,
-    "avg_hr": 115,
-    "max_hr": 155,
-    "id": 7
-  },
-  {
-    "date": "2026-04-27",
-    "sport": "Weightlifting_msk",
-    "strain": 10.3,
-    "duration_mins": 36,
-    "calories": 320,
-    "avg_hr": 128,
-    "max_hr": 176,
-    "id": 8
-  },
-  {
-    "date": "2026-04-22",
-    "sport": "Cricket",
-    "strain": 6.8,
-    "duration_mins": 19,
-    "calories": 172,
-    "avg_hr": 129,
-    "max_hr": 161,
-    "id": 9
-  },
-  {
-    "date": "2026-04-22",
-    "sport": "Weightlifting_msk",
-    "strain": 11.7,
-    "duration_mins": 21,
-    "calories": 97,
-    "avg_hr": 107,
     "max_hr": 160,
     "id": 10
   }
