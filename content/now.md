@@ -3,7 +3,7 @@ title: Now
 hideMetadata: true
 ---
 
-*Last updated: 30th April 2026*
+*Last updated: 8th May 2026*
 
 I believe in _small wins create momentum_.
 
@@ -13,12 +13,13 @@ What I am upto in a window of 30-45 days:
 
 ## LIVE from my life
 
-- Book: Tiny Experiments by Anne-Laure Le Cunff | 195/298 pages
+- Book: The Coffee Dictionary | 12/256
 - Anime: Dragon Ball Z | 189/291 episodes
 - 50 pushups | PR: 40
 - 2 minute plank | PR: 1:01
 - 100 squats | PR: 50
-- No sugar for 6 months | Progress: 39/180 days
+- No sugar for 6 months | Progress: 48/180 days
+- 📍 Somewhere in the mountains in Dharamshala
 
 ## Successful Missions
 
