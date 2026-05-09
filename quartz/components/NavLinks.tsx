@@ -6,7 +6,7 @@ export default (() => {
   const NavLinks: QuartzComponent = ({ displayClass, fileData }: QuartzComponentProps) => {
     const links: { text: string; slug: SimpleSlug }[] = [
       { text: "Projects", slug: "projects" as SimpleSlug },
-      { text: "Writing", slug: "writing" as SimpleSlug },
+      { text: "Writing", slug: "w" as SimpleSlug },
       { text: "Workouts", slug: "workouts" as SimpleSlug },
       { text: "Recommendations", slug: "recommendations" as SimpleSlug },
       { text: "Music", slug: "music" as SimpleSlug },
