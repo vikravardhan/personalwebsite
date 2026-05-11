@@ -72,6 +72,12 @@
     "link": null
   },
   {
+    "title": "Dhurandhar 1 & 2",
+    "type": "Movie",
+    "year": "2026",
+    "link": null
+  },
+  {
     "title": "Elemental",
     "type": "Movie",
     "year": "2025",
@@ -198,6 +204,12 @@
     "link": "https://www.magdalenaponurska.com/p/the-20-minute-writing-exercise-that"
   },
   {
+    "title": "Michael",
+    "type": "Movie",
+    "year": "2026",
+    "link": null
+  },
+  {
     "title": "Microsoft Volume 1 and 2",
     "type": "Podcast",
     "year": "2025",
@@ -231,6 +243,12 @@
     "title": "Predestination",
     "type": "Movie",
     "year": "2025",
+    "link": null
+  },
+  {
+    "title": "Project Hail Mary",
+    "type": "Movie",
+    "year": "2026",
     "link": null
   },
   {
@@ -270,6 +288,12 @@
     "link": null
   },
   {
+    "title": "Succession S1 & 2",
+    "type": "Show",
+    "year": "2026",
+    "link": null
+  },
+  {
     "title": "Superboys of Malegaon",
     "type": "Movie",
     "year": "2025",
@@ -304,6 +328,12 @@
     "type": "YouTube",
     "year": "2025",
     "link": "https://youtu.be/iMtXqTmfta0"
+  },
+  {
+    "title": "Tiny Experiments",
+    "type": "Books",
+    "year": "2026",
+    "link": null
   },
   {
     "title": "TopGun, TopGun: Maverick",
