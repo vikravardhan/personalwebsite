@@ -14,10 +14,8 @@ Either way, you win... which is why I decided to include both live and shut down
 ### Live Projects:
 
 - <u>Service Business</u>: I help creators make money with their newsletters. In 5 years, I have worked with 30+ newsletters including creators like [Dr Pal](https://www.instagram.com/dr.pal.manickam/) and [Aadit Sheth](https://x.com/aaditsh). All of my work [here](https://vikra.work/).
-- <u>The Modern Marketers</u>: I talk to top marketers and share their AI workflows on [The Modern Marketers](https://themodernmarketers.co/).
-- <u>The Modern Marketers PRO</u>: I run an [exclusive, premium community for marketers](https://themodernmarketers.co/community). Inside we become AI-first marketers with challenges, mutual teaching, and transparent knowledge sharing.
+- <u>The Modern Marketers PRO</u>: I run an [exclusive, premium community for marketers](https://themodernmarketers.co/community). Inside we become AI-first marketers with challenges, mutual teaching, and transparent knowledge sharing. Also I talk to top marketers and share their AI workflows on [The Modern Marketers](https://themodernmarketers.co/) newsletter.
 - <u>Caffeineletter</u>: My friend Aravind and I help home brewers [brew café-like coffee at home](https://caffeineletter.com/)
-- <u>Vikra's Café</u>: I share the best content I consume every month. You can also find its content on this website.
 
 More details on [Dopecontent.in](https://dopecontent.in/)
 
