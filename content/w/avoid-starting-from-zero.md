@@ -8,7 +8,7 @@ tags:
 
 My favourite thing about the internet is most of what you think of has already been thought of.
 
-You want to write a blog? Supporting thesis and arguments exist. You want to code a tool? You will find an open source Github repo. Validate ideas? Reddit threads from 5 years ago already decoded the pros and cons. Learn a skill? Someone has documented their 0-1 process. Write a speech? There are 100s of directories with 1000s of templates.
+You want to write a blog? Supporting thesis and arguments exist. You want to code a tool? You will find an open source Github repo. Validate ideas? Reddit threads from 5 years ago already decoded the pros and cons. Learn a skill? Someone has documented their first steps. Write a speech? There are 100s of directories with 1000s of templates.
 
 There was a time I was married to the idea of innovation. That everything I do has to be unique, new and something people have never seen before.
 
@@ -22,7 +22,7 @@ Now that it has been solved, I can build other features. There is absolutely zer
 
 >“Originality is undetected plagiarism.”
 >
->- William Ralph Inge
+>William Ralph Inge
 
 It’s not about becoming a thief who doesn’t get caught, but making the most of what the world already has to offer to you. Then build on top of it. Upside is you find loopholes to improve. Downside is you learn from systems that are proven and validated.
 
