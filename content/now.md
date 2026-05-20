@@ -3,7 +3,7 @@ title: Now
 hideMetadata: true
 ---
 
-*Last updated: 8th May 2026*
+*Last updated: 20th May 2026*
 
 I believe in _small wins create momentum_.
 
@@ -18,8 +18,7 @@ What I am upto in a window of 30-45 days:
 - 50 pushups | PR: 40
 - 2 minute plank | PR: 1:01
 - 100 squats | PR: 50
-- No sugar for 6 months | Progress: 48/180 days
-- 📍 Somewhere in the mountains in Dharamshala
+- No sugar for 6 months | Progress: 58/180 days
 
 ## Successful Missions
 
