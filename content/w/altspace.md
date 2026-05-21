@@ -23,11 +23,11 @@ If I was time travelling and a young Vikra is visiting AltSpace for the first ti
 
 Look up, strike a conversation. Even with all its heartwarming views, AltSpace’s value is in its people. There’s no point if you’re not spending time with people. We went for the place, weather, and nature. We stayed for the people. Like actually stayed. We extended by a week.
 
-![[CleanShot 2026-05-21 at 18.08.07@2x.png|500]]
+![[CleanShot 2026-05-21 at 18.08.07.png|500]]
 
 10k steps are the default. If you’re worried about movement, you will have your most fun 10k steps. Walks are fun. You can play sports. Plus you can always hike and walk around to watch sunsets.
 
-![[CleanShot 2026-05-21 at 17.58.35@2x.png|500]]
+![[CleanShot 2026-05-21 at 17.58.35.png|500]]
 
 Ask for help. You will be stunned by the number of smart people around you. Could be life, work - if you need advice, AltSpace always has someone to give you a perspective. I learned so much about marketing, products, and countless life lessons.
 
@@ -35,7 +35,7 @@ Say hi. Or good morning. Or anything you feel like. You have no idea how simple 
 
 You will realise how little you have to work. When it’s just me and my work in isolation, I spend a lot of time pretending to work. I pick up tasks that aren’t important. I feel validated by the pseudoproductivity. But when you always have scope for interesting activities with interesting people, you learn to prioritse tasks and compartmentalise work. My productivity was still the same when I was at AltSpace, but with a lot more fun.
 
-![[CleanShot 2026-05-21 at 18.11.16@2x.png|500]]
+![[CleanShot 2026-05-21 at 18.11.16.png|500]]
 
 AltSpace is a place for many firsts. My first TT tournament, first hike, first attempt at flute and guitar, first cold plunge in a stream, first stand-up comedy set, etc. The diversity of the people introduces you to many activities you didn’t think were cool.
 
@@ -67,7 +67,7 @@ From my gallery
 
 Until I become better at taking pictures and get a good camera, you will have to bear with my amateurish photos. Some of my favs:
 
-![[CleanShot 2026-05-21 at 18.24.49@2x.png|500]]
+![[CleanShot 2026-05-21 at 18.24.49.png|500]]
 
 ![[IMG_6811.jpeg|500]]
 
@@ -77,17 +77,17 @@ Until I become better at taking pictures and get a good camera, you will have to
 
 ![[093ff342-dd30-40d0-86c1-ee06728b5595.jpeg|500]]
 
-![[CleanShot 2026-05-21 at 18.49.11@2x.png|500]]
+![[CleanShot 2026-05-21 at 18.49.11.png|500]]
 
 ![[IMG_6814.jpeg|500]]
 
-![[CleanShot 2026-05-21 at 18.49.33@2x.png|500]]
+![[CleanShot 2026-05-21 at 18.49.33.png|500]]
 
-![[CleanShot 2026-05-21 at 18.49.49@2x.png|500]]
+![[CleanShot 2026-05-21 at 18.49.49.png|500]]
 
-![[CleanShot 2026-05-21 at 18.17.02@2x.png|500]]
+![[CleanShot 2026-05-21 at 18.17.02.png|500]]
 
-![[CleanShot 2026-05-21 at 18.50.06@2x.png|500]]
+![[CleanShot 2026-05-21 at 18.50.06.png|500]]
 
-![[CleanShot 2026-05-21 at 18.50.33@2x.png|500]]
+![[CleanShot 2026-05-21 at 18.50.33.png|500]]
 
