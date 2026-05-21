@@ -113,4 +113,4 @@ From my gallery... Until I become better at taking pictures and get a good camer
 
 ![[CleanShot 2026-05-21 at 18.50.06.png|sunsets >>>]]
 
-![[CleanShot 2026-05-21 at 18.50.33.png|Goodbye, until next time <3]]
+![[CleanShot 2026-05-21 at 18.50.33.png|Goodbye, until next time ♥]]
