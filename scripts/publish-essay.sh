@@ -47,9 +47,27 @@ fi
 
 echo "Published: $DEST"
 
+# Copy referenced images from Obsidian vault to content/Attachments
+OBSIDIAN_ROOT="/Users/vikravardhan/Desktop/Obsidian Vault/vik's second brain"
+ATTACHMENTS_DIR="/Users/vikravardhan/Builds/vikravardhan.com/content/Attachments"
+images=$(grep -oP '(?<=!\[\[)[^\]|]+' "$DEST" || true)
+copied=0
+while IFS= read -r img; do
+  [[ -z "$img" ]] && continue
+  found=$(find "$OBSIDIAN_ROOT" -name "$img" 2>/dev/null | head -1)
+  if [[ -n "$found" ]]; then
+    cp "$found" "$ATTACHMENTS_DIR/"
+    echo "  Copied image: $img"
+    ((copied++)) || true
+  else
+    echo "  WARNING: image not found in vault: $img"
+  fi
+done <<< "$images"
+[[ $copied -gt 0 ]] && echo "Copied $copied image(s) to Attachments."
+
 # Commit and push
 cd /Users/vikravardhan/Builds/vikravardhan.com
-git add "$DEST"
+git add "$DEST" "$ATTACHMENTS_DIR/"
 git commit -m "Add essay: $TITLE"
 git pull --rebase
 git push
