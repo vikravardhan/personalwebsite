@@ -9,6 +9,12 @@ article th {
   font-family: Georgia, "Times New Roman", serif;
 }
 
+article img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 // Mobile responsiveness improvements
 @media (max-width: 800px) {
   .page > #quartz-body {
