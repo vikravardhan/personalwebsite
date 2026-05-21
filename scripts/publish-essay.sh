@@ -56,8 +56,12 @@ while IFS= read -r img; do
   [[ -z "$img" ]] && continue
   found=$(find "$OBSIDIAN_ROOT" -name "$img" 2>/dev/null | head -1)
   if [[ -n "$found" ]]; then
-    cp "$found" "$ATTACHMENTS_DIR/"
-    echo "  Copied image: $img"
+    # Strip @2x suffix — Quartz's wikilink parser breaks on @ in filenames
+    destname="${img/@2x/}"
+    cp "$found" "$ATTACHMENTS_DIR/$destname"
+    # Update reference in essay if name changed
+    [[ "$destname" != "$img" ]] && sed -i '' "s/$(echo "$img" | sed 's/[[\.*^$()+?{|]/\\&/g')/$(echo "$destname" | sed 's/[[\.*^$()+?{|]/\\&/g')/g" "$DEST"
+    echo "  Copied image: $destname"
     ((copied++)) || true
   else
     echo "  WARNING: image not found in vault: $img"
