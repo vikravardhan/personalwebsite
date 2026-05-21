@@ -15,6 +15,24 @@ article img {
   margin-right: auto;
 }
 
+article figure {
+  text-align: center;
+  margin: 1rem auto;
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  figcaption {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--gray);
+    font-style: italic;
+  }
+}
+
 // Mobile responsiveness improvements
 @media (max-width: 800px) {
   .page > #quartz-body {

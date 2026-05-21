@@ -235,17 +235,20 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                     const alt = match?.groups?.alt ?? ""
                     const width = match?.groups?.width ?? "auto"
                     const height = match?.groups?.height ?? "auto"
-                    return {
+                    const imgNode = {
                       type: "image",
                       url,
                       data: {
-                        hProperties: {
-                          width,
-                          height,
-                          alt,
-                        },
+                        hProperties: { width, height, alt },
                       },
                     }
+                    if (alt) {
+                      return {
+                        type: "html",
+                        value: `<figure><img src="${url}" alt="${alt}" width="${width}" height="${height}" /><figcaption>${alt}</figcaption></figure>`,
+                      }
+                    }
+                    return imgNode
                   } else if ([".mp4", ".webm", ".ogv", ".mov", ".mkv"].includes(ext)) {
                     return {
                       type: "html",
