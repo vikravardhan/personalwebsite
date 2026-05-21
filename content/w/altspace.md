@@ -1,3 +1,9 @@
+---
+title: Life at AltSpace
+published: 2026-05-21
+tags:
+  - travel
+---
 
 7:37 am, Tuesday, 19th May 2026.  
 
