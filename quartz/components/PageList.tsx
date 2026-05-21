@@ -55,13 +55,32 @@ export function byDateAndAlphabeticalFolderFirst(cfg: GlobalConfiguration): Sort
 type Props = {
   limit?: number
   sort?: SortFn
+  writingFolder?: boolean
 } & QuartzComponentProps
 
-export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort }: Props) => {
+export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort, writingFolder }: Props) => {
   const sorter = sort ?? byDateAndAlphabeticalFolderFirst(cfg)
   let list = allFiles.sort(sorter)
   if (limit) {
     list = list.slice(0, limit)
+  }
+
+  if (writingFolder) {
+    return (
+      <ul class="writing-ul">
+        {list.map((page) => {
+          const title = page.frontmatter?.title
+          const tags = (page.frontmatter?.tags ?? []).join(",")
+          return (
+            <li class="section-li" data-tags={tags}>
+              <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
+                {title}
+              </a>
+            </li>
+          )
+        })}
+      </ul>
+    )
   }
 
   return (
@@ -110,5 +129,25 @@ PageList.css = `
 
 .section > .tags {
   margin: 0;
+}
+
+.writing-ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.writing-ul li {
+  margin: 0.45rem 0;
+  font-size: 1rem;
+}
+
+.writing-ul li a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.writing-ul li a:hover {
+  text-decoration: underline;
 }
 `

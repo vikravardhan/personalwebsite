@@ -90,11 +90,6 @@ export default ((opts?: Partial<FolderContentOptions>) => {
         .filter((page) => page !== undefined) ?? []
     const cssClasses: string[] = fileData.frontmatter?.cssclasses ?? []
     const classes = cssClasses.join(" ")
-    const listProps = {
-      ...props,
-      sort: options.sort,
-      allFiles: allPagesInFolder,
-    }
 
     const content = (
       (tree as Root).children.length === 0
@@ -102,13 +97,23 @@ export default ((opts?: Partial<FolderContentOptions>) => {
         : htmlToJsx(fileData.filePath!, tree)
     ) as ComponentChildren
 
-    const isWritingFolder = (fileData.slug ?? "").startsWith("writing")
-    const writingTags = ["business", "health", "life", "hobbies", "recommendations"]
+    const slug = fileData.slug ?? ""
+    const isWritingFolder = slug === "w" || slug.startsWith("w/")
+
+    const listProps = {
+      ...props,
+      sort: options.sort,
+      allFiles: allPagesInFolder,
+      writingFolder: isWritingFolder,
+    }
+    const writingTags = isWritingFolder
+      ? [...new Set(allPagesInFolder.flatMap((p) => p.frontmatter?.tags ?? []))].sort()
+      : []
 
     return (
-      <div class="popover-hint">
+      <div class={`popover-hint${isWritingFolder ? " writing-folder" : ""}`}>
         <article class={classes}>{content}</article>
-        {isWritingFolder && (
+        {isWritingFolder && writingTags.length > 0 && (
           <div class="writing-filters">
             <div class="writing-filter-group">
               <button class="writing-filter-btn active" data-filter="all">
@@ -116,7 +121,7 @@ export default ((opts?: Partial<FolderContentOptions>) => {
               </button>
               {writingTags.map((tag) => (
                 <button class="writing-filter-btn" data-filter={tag}>
-                  {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                  {tag}
                 </button>
               ))}
             </div>
@@ -173,24 +178,44 @@ export default ((opts?: Partial<FolderContentOptions>) => {
   FolderContent.afterDOMLoaded = `
     document.addEventListener("nav", () => {
       const filterContainer = document.querySelector(".writing-filters")
-      if (filterContainer) {
-        const items = document.querySelectorAll(".section-li")
-        filterContainer.querySelectorAll(".writing-filter-btn").forEach(btn => {
-          btn.addEventListener("click", () => {
-            const filter = btn.dataset.filter
-            filterContainer.querySelectorAll(".writing-filter-btn").forEach(b => b.classList.remove("active"))
-            btn.classList.add("active")
-            items.forEach(item => {
-              if (filter === "all") {
-                item.style.display = ""
-              } else {
-                const tags = (item.dataset.tags || "").split(",")
-                item.style.display = tags.includes(filter) ? "" : "none"
-              }
-            })
+      if (!filterContainer) return
+
+      const items = document.querySelectorAll(".section-li")
+      const activeFilters = new Set()
+
+      function applyFilters() {
+        const allBtn = filterContainer.querySelector('[data-filter="all"]')
+        if (activeFilters.size === 0) {
+          allBtn.classList.add("active")
+          items.forEach(item => { item.style.display = "" })
+        } else {
+          allBtn.classList.remove("active")
+          items.forEach(item => {
+            const tags = (item.dataset.tags || "").split(",").filter(Boolean)
+            const matches = [...activeFilters].some(f => tags.includes(f))
+            item.style.display = matches ? "" : "none"
           })
-        })
+        }
       }
+
+      filterContainer.querySelectorAll(".writing-filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const filter = btn.dataset.filter
+          if (filter === "all") {
+            activeFilters.clear()
+            filterContainer.querySelectorAll(".writing-filter-btn:not([data-filter='all'])").forEach(b => b.classList.remove("active"))
+          } else {
+            if (activeFilters.has(filter)) {
+              activeFilters.delete(filter)
+              btn.classList.remove("active")
+            } else {
+              activeFilters.add(filter)
+              btn.classList.add("active")
+            }
+          }
+          applyFilters()
+        })
+      })
     })
   `
 

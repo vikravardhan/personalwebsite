@@ -36,7 +36,10 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.ArticleTitle(),
     Component.ContentMeta(),
-    Component.TagList(),
+    Component.ConditionalRender({
+      component: Component.TagList(),
+      condition: (page) => !(page.fileData.slug ?? "").startsWith("w/"),
+    }),
   ],
   left: [
     Component.MobileOnly(Component.Spacer()),
