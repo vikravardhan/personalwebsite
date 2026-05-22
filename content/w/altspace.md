@@ -6,7 +6,7 @@ tags:
 ---
 
 
-7:37 am, Tuesday, 19th May 2026.  
+It's 7:37 am on Tuesday, 19th May 2026.  
 
 I spent three weeks at AltSpace, Dharamshala. In the simplest terms, it’s a curated, coliving, and slow travel experience. Imagine rooms, dorms, a dining area, space to work out and play sports, coworking, etc.
 
@@ -30,7 +30,7 @@ Even with all its heartwarming views, AltSpace’s value is in its people. There
 
 #### **10k steps are the default.**
 
-If you’re worried about movement, you will have your most fun 10k steps. Walks are fun. You can play sports. Plus you can always hike and walk around to watch sunsets.
+If you’re worried about movement, you will have your most fun 10k steps. Walks are fun. You can play sports. Plus you can always hike around to watch sunsets.
 
 ![[CleanShot 2026-05-21 at 17.58.35.png|500]]
 
@@ -40,7 +40,7 @@ You will be stunned by the number of smart people around you. Could be life, wor
 
 #### **Say hi. Or good morning. Or whatever.**
 
-You have no idea how simple things cheer you up. Look at people, smile, do the small talk. The one-minute walks from the dining area, the time you make coffee/tea at the common kitchen, the small break between work - if you can just wave at one person and say hi during this time, I promise you gain more energy.
+You have no idea how simple things cheer you up. Look at people, smile, do the small talk. The one-minute walks from the dining area, the time you make coffee at the common kitchen, small breaks between work - if you can just wave at one person and say hi during this time, I promise you gain more energy.
 
 #### **You will realise how little you have to work.**
 
@@ -92,7 +92,7 @@ From my gallery... Until I become better at taking pictures and get a good camer
 ![[IMG_6811.jpeg|"Baadal important hain"]]
 
 
-![[IMG_6812.jpeg|I got the same sticker. I will be on one of my coffee mugs.]]
+![[IMG_6812.jpeg|I got the same sticker. It will be on one of my coffee mugs.]]
 
 
 ![[IMG_6813.jpeg|Meet Dan]]
@@ -101,7 +101,7 @@ From my gallery... Until I become better at taking pictures and get a good camer
 
 ![[CleanShot 2026-05-21 at 18.49.11.png|Just wow???]]
 
-![[IMG_6814.jpeg|1000000/10 recommend getting a slam book and ask your friends to write some notes]]
+![[IMG_6814.jpeg|Highly recommend getting a slam book and asking your friends to write some notes]]
 
 ![[CleanShot 2026-05-21 at 18.49.33.png|This is Jimmy. He loves playing Fetch.]]
 
