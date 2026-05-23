@@ -50,7 +50,7 @@ echo "Published: $DEST"
 # Copy referenced images from Obsidian vault to content/Attachments
 OBSIDIAN_ROOT="/Users/vikravardhan/Desktop/Obsidian Vault/vik's second brain"
 ATTACHMENTS_DIR="/Users/vikravardhan/Builds/vikravardhan.com/content/Attachments"
-images=$(grep -oP '(?<=!\[\[)[^\]|]+' "$DEST" || true)
+images=$(grep -oE '!\[\[[^]|]+' "$DEST" | sed 's/!\[\[//' || true)
 copied=0
 while IFS= read -r img; do
   [[ -z "$img" ]] && continue
