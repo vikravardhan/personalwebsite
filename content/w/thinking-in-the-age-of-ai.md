@@ -72,7 +72,7 @@ But offline hobbies are a great way to zone out. AI era will become (if not alre
 
 If you have noticed, ever since AI became mainstream, your work hours might have actually increased.
 
-![[CleanShot 2026-05-23 at 17.15.13@2x.png]]
+![[CleanShot 2026-05-23 at 17.15.13.png]]
   
 Your endurance has limits and you will feel fatigue at some point irrespective of how much you love your work. Fatigue kills thinking.  
   
