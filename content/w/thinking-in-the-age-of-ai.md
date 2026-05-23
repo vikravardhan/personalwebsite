@@ -14,13 +14,13 @@ You might have seen tech gurus argue don’t outsource your thinking, use AI for
 
 After speaking to friends much smarter than me, using AI in almost every task, and consuming multiple tweets, newsletters, and YouTube videos, I have come to the conclusion that you must be articulate, T-shaped, diverse in your experience and knowledge to win in the AI era.  
 
-- Articulate: On the most basic level, prompting. AI understands better if you communicate clearly (like all relationships????)
-- T-shaped: If you’re only a specialist in one skill, say content writing, I don’t think the probability of landing good roles is as high as it used to be. Now brands expect you to write in multiple formats or handle more roles than just writing.
-- Diversity: When people say unique, all they mean is you mix 2-3 things in a way many people wouldn’t. To do that, you need access to multiple knowledge sets.
+- **Articulate**: On the most basic level, prompting. AI understands better if you communicate clearly (like all relationships????)
+- **T-shaped**: If you’re only a specialist in one skill, say content writing, I don’t think the probability of landing good roles is as high as it used to be. Now brands expect you to write in multiple formats or handle more roles than just writing.
+- **Diversity**: When people say unique, all they mean is you mix 2-3 things in a way many people wouldn’t. To do that, you need access to multiple knowledge sets.
 
 >So… What are the daily tasks you already do that you can multiply intentionally to become articulate, T-shaped, and diverse?
 
-## 1. Talk to smart people.  
+## 1. Talk to smart people
 
 If not for my friends, I would still be using ChatGPT's free plan and arguing AI is shit, while a much smarter marketer would replace me.  
 
@@ -45,7 +45,7 @@ Fuck it, you don’t even need to publish it. The entire point is to put your th
 
 Also, a minimum of 500 words because nuance is where insights lie.
 
-## 3. Read books.  
+## 3. Read books
 
 Probably the only knowledge set today without ads, algorithms, and distractions.  
 
@@ -57,21 +57,21 @@ You can scroll your thoughts away on reels. Next five recommendations scream “
   
 But books let you wait. They let you take your time and build on your thoughts. That’s why I switched to paperbacks. So I can observe my thoughts without algorithms directing what to think next.  
 
-## 4. 15-minutes of doing nothing.  
+## 4. 15-minutes of doing nothing
 
 I don’t know if you noticed this too, but most people around me, including myself, have become allergic to silence.
 
 I am doing admin work? Need music in the background.
-Watching TV? Need phone. One screen isn’t enough.  
+Watching TV? Need phone. One screen isn’t enough.
 On a walk? Need music or an audiobook.  
 
-[]()These aren’t essentially bad habits. Music helps me relax while doing the boring admin tasks. I can text my friends while watching cricket. I can learn new concepts while meeting the step count. It’s cool.  
+These aren’t essentially bad habits. Music helps me relax while doing the boring admin tasks. I can text my friends while watching cricket. I can learn new concepts while meeting the step count. It’s cool.  
 
 My problem is with how hard it is for us to sit and do nothing. No agenda, no plans, no goals, no productivity trackers, just maybe sit on a terrace and see a mango tree. Or sunset. Or birds fly.  
 
 The curse of ambitious people is they can’t sit still. They don’t always do meaningful work, but they’d like to indulge in an illusion of work. This is me. But I also recommend spending 15 minutes a day without devices or an agenda, and notice the difference it makes in your life.  
 
-## 5. Build offline hobbies.  
+## 5. Build offline hobbies
 
 At this point, I might sound like a broken tape recorder.
   
@@ -87,7 +87,7 @@ I play sports, repair watches, build LEGO sets, brew coffee, and have a bunch of
 
 Also, for the sake of it, hobbies are fun!  
 
-## 6. Always learn something new.
+## 6. Always learn something new
 
 Neuroplasticity is one of my favourite concepts. It’s about how the networks in your mind rewire and tap into new corners when you learn a new skill. Like a language, instrument, sport, etc.  You should look it up on YouTube. It’s super duper interesting.  
 
@@ -95,7 +95,7 @@ Every new hobby taps into different areas of the nervous system. So each time yo
 
 The things you learn don’t have to be productive or useful. They just need to be new and make you curious enough to spend time. Observe your curiosity.
 
-At the time of writing this essay, [I was in Dharamshala](https://vikravardhan.com/w/altspace) and attended a stand-up comedy writing workshop. I learned to write jokes, the basic structure of joke writing, and even performed a two-minute set.
+At the time of writing this essay, [I was in Dharamshala](https://vikravardhan.com/w/altspace) and attended a stand-up comedy writing workshop. I learned to write jokes and even performed a two-minute set.
 
 I might never write a joke again in my life. I might be super bad at comedy. But now I have a new insight into how I view the world. I keep searching for setups and punch lines.  
 
