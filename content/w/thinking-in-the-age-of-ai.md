@@ -1,4 +1,11 @@
----\ntitle: On Thinking in the age of AI\npublished: 2026-05-23\ntags:\n  - business\n---\n\n
+---
+title: On Thinking in the age of AI
+published: 2026-05-23
+tags:
+  - business
+---
+
+
 I spend at least 30 hours a week reading about new AI developments, enterprise use cases, and building agents, intelligent workflows to make my job simpler.
 
 I wouldn’t dare call myself a power user yet, but my fair share of AI use makes me wonder, “How do I stay in charge when I am constantly outsourcing my mind?”

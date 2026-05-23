@@ -42,7 +42,7 @@ if head -1 "$SRC" | grep -q "^---"; then
   echo "Frontmatter already exists, copying as-is."
   cp "$SRC" "$DEST"
 else
-  printf '%s' "$FRONTMATTER" | cat - "$SRC" > "$DEST"
+  printf '%b' "$FRONTMATTER" | cat - "$SRC" > "$DEST"
 fi
 
 echo "Published: $DEST"
