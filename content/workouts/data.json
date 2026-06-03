@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-06-03",
+    "sport": "Hiit",
+    "strain": 14.1,
+    "duration_mins": 56,
+    "calories": 479,
+    "avg_hr": 127,
+    "max_hr": 181,
+    "id": 1
+  },
+  {
+    "date": "2026-06-02",
+    "sport": "Activity",
+    "strain": 6.7,
+    "duration_mins": 18,
+    "calories": 166,
+    "avg_hr": 131,
+    "max_hr": 155,
+    "id": 2
+  },
+  {
     "date": "2026-05-31",
     "sport": "Walking",
     "strain": 5,
@@ -7,7 +27,7 @@
     "calories": 107,
     "avg_hr": 87,
     "max_hr": 148,
-    "id": 1
+    "id": 3
   },
   {
     "date": "2026-05-29",
@@ -17,7 +37,7 @@
     "calories": 261,
     "avg_hr": 112,
     "max_hr": 166,
-    "id": 2
+    "id": 4
   },
   {
     "date": "2026-05-28",
@@ -27,7 +47,7 @@
     "calories": 157,
     "avg_hr": 108,
     "max_hr": 152,
-    "id": 3
+    "id": 5
   },
   {
     "date": "2026-05-27",
@@ -37,7 +57,7 @@
     "calories": 68,
     "avg_hr": 112,
     "max_hr": 144,
-    "id": 4
+    "id": 6
   },
   {
     "date": "2026-05-26",
@@ -47,7 +67,7 @@
     "calories": 2416,
     "avg_hr": 129,
     "max_hr": 190,
-    "id": 5
+    "id": 7
   },
   {
     "date": "2026-05-25",
@@ -57,7 +77,7 @@
     "calories": 122,
     "avg_hr": 97,
     "max_hr": 148,
-    "id": 6
+    "id": 8
   },
   {
     "date": "2026-05-16",
@@ -67,7 +87,7 @@
     "calories": 339,
     "avg_hr": 119,
     "max_hr": 167,
-    "id": 7
+    "id": 9
   },
   {
     "date": "2026-05-16",
@@ -77,26 +97,6 @@
     "calories": 111,
     "avg_hr": 102,
     "max_hr": 148,
-    "id": 8
-  },
-  {
-    "date": "2026-05-16",
-    "sport": "Hiking-Rucking",
-    "strain": 5.9,
-    "duration_mins": 28,
-    "calories": 155,
-    "avg_hr": 111,
-    "max_hr": 151,
-    "id": 9
-  },
-  {
-    "date": "2026-05-15",
-    "sport": "Cricket",
-    "strain": 6.9,
-    "duration_mins": 34,
-    "calories": 209,
-    "avg_hr": 112,
-    "max_hr": 164,
     "id": 10
   }
 ]
