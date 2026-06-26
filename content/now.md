@@ -3,7 +3,7 @@ title: Now
 hideMetadata: true
 ---
 
-*Last updated: 20th May 2026*
+*Last updated: 26th June 2026*
 
 I believe in _small wins create momentum_.
 
@@ -13,12 +13,12 @@ What I am upto in a window of 30-45 days:
 
 ## LIVE from my life
 
-- Book: The Coffee Dictionary | 12/256
-- Anime: Dragon Ball Z | 189/291 episodes
+- 📍 Bangalore, Roach Mafia Retreat
+- No sugar for 6 months | Progress: 96/180 days
+- Marvel’s Daredevil: S1 E4
 - 50 pushups | PR: 40
 - 2 minute plank | PR: 1:01
 - 100 squats | PR: 50
-- No sugar for 6 months | Progress: 58/180 days
 
 ## Successful Missions
 
