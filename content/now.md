@@ -3,7 +3,7 @@ title: Now
 hideMetadata: true
 ---
 
-*Last updated: 2nd August 2026*
+*Last updated: 6th August 2026*
 
 I believe in _small wins create momentum_.
 
@@ -13,11 +13,11 @@ What I am upto in a window of 30-45 days:
 
 ## LIVE from my life
 
-- No sugar for 6 months | Progress: 135/180 days
-- 15-hour intermittent fasting. Month four. Has been some inconsistencies but getting there slowly.
-- Entertainment: Waiting for Ted Lasso's new season.
-- Books: The Coffee Dictionary by Maxwell Colonna-Dashwood (12.8%), The Boron Letters (2%)
-- Beta testing my first open source project: [Go Post Today](https://gopost.today/)
+- No sugar for 6 months | Progress: 139/180 days
+- 15-hour intermittent fasting. Month four. Has been some inconsistencies because I moved from 14 hours of non-eating window to 15. I am still figuring out my routine around this.
+- Entertainment: Ted Lasso S4.
+- Books: The Coffee Dictionary by Maxwell Colonna-Dashwood (12.8%), The Boron Letters (22%)
+- Beta testing my first open source project: [Go Post Today](https://github.com/vikravardhan/go-post-today) Just give the link to your AI and it will tell you what to do.
 
 ## Successful Missions
 

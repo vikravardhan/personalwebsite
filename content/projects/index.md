@@ -13,19 +13,20 @@ Either way, you win... which is why I decided to include both live and shut down
 
 ### Live Projects:
 
-- <u>Service Business</u>: I help creators make money with their newsletters. In 5 years, I have worked with 30+ newsletters including creators like [Dr Pal](https://www.instagram.com/dr.pal.manickam/) and [Aadit Sheth](https://x.com/aaditsh). All of my work [here](https://vikra.work/).
-- <u>The Modern Marketers PRO</u>: I run an [exclusive, premium community for marketers](https://themodernmarketers.co/community). Inside we become AI-first marketers with challenges, mutual teaching, and transparent knowledge sharing. Also I talk to top marketers and share their AI workflows on [The Modern Marketers](https://themodernmarketers.co/) newsletter.
+- <u>Day Job</u>: I specialise in newsletter growth. I help creators and media companies with content, growth and marketing. In 4 years, I have worked with 30+ newsletters, with close to ~3M combined email subscribers. Some names I am allowed to mention: [Dr Pal](https://www.instagram.com/dr.pal.manickam/), [Aadit Sheth](https://x.com/aaditsh).
+- <u>The Modern Marketers</u>: I talk to top marketers and share their AI Marketing workflows for free on [The Modern Marketers](https://themodernmarketers.co/) newsletter.
+- <u>The Modern Marketers PRO</u>: I run an [exclusive community for high agency marketers](https://themodernmarketers.co/community). This is me selfishly building a room of people who I'd love to hangout with every single day. We cowork, host sessions on AI and marketing, and just support each other with honest feedback and knowledge sharing.
 - <u>Caffeineletter</u>: My friend Aravind and I help home brewers [brew café-like coffee at home](https://caffeineletter.com/)
-- Go Post Today: A tiny macOS [menu bar app](https://gopost.today/) that tracks your weekly X (prev Twitter) post count against a target you set.
+- <u>Go Post Today</u>: A tiny macOS [menu bar app](https://github.com/vikravardhan/go-post-today) that tracks your weekly X (prev Twitter) post count against a target you set. It's free and open source. Give the repo to your AI and it will tell you what to do.
 
 ---
 
 ### Shut Down Projects:
 
 - <u>r/newsletterhub SubReddit</u>: A space for newsletter operators, service providers, and tool builders to hang out. The returns were not as promising as I expected.
-- <u>Blog</u>: Started as a fun vibe coding project. Months later, I realised the entire blog could be a tag on Cognition.
+- <u>Blog</u>: Started as a fun vibe coding project. Months later, I realised the entire blog could be a content tag on Cognition.
 - <u>NewsletterHub</u>: Directory for you to discover newsletters. The ROI wasn't great for my current scale.
-- <u>Dopeletters</u>: Private, six-week cohort for creators to start and grow their newsletters from 0-500 subscribers. Shut it down after two batches because I didn't want to exchange my time.
+- <u>Dopeletters</u>: Private, six-week cohort for creators to start and grow their newsletters from 0-500 subscribers. Shut it down after two batches because it was an exchange of time.
 - <u>Cognition</u>: I help creators [make money with their newsletters](https://readcognition.com/). This is not shut down, but currently paused as I work on The Modern Marketers.
 
 
