@@ -1,5 +1,35 @@
 [
   {
+    "date": "2026-08-18",
+    "sport": "Walking",
+    "strain": 6.4,
+    "duration_mins": 35,
+    "calories": 213,
+    "avg_hr": 116,
+    "max_hr": 150,
+    "id": 1
+  },
+  {
+    "date": "2026-08-18",
+    "sport": "Cricket",
+    "strain": 11,
+    "duration_mins": 53,
+    "calories": 470,
+    "avg_hr": 131,
+    "max_hr": 172,
+    "id": 2
+  },
+  {
+    "date": "2026-08-17",
+    "sport": "Weightlifting_msk",
+    "strain": 7.2,
+    "duration_mins": 32,
+    "calories": 127,
+    "avg_hr": 101,
+    "max_hr": 166,
+    "id": 3
+  },
+  {
     "date": "2026-08-17",
     "sport": "Walking",
     "strain": 5.6,
@@ -7,7 +37,7 @@
     "calories": 127,
     "avg_hr": 101,
     "max_hr": 166,
-    "id": 1
+    "id": 4
   },
   {
     "date": "2026-08-16",
@@ -17,7 +47,7 @@
     "calories": 41,
     "avg_hr": 82,
     "max_hr": 177,
-    "id": 2
+    "id": 5
   },
   {
     "date": "2026-08-16",
@@ -27,7 +57,7 @@
     "calories": 183,
     "avg_hr": 115,
     "max_hr": 159,
-    "id": 3
+    "id": 6
   },
   {
     "date": "2026-08-14",
@@ -37,7 +67,7 @@
     "calories": 88,
     "avg_hr": 88,
     "max_hr": 132,
-    "id": 4
+    "id": 7
   },
   {
     "date": "2026-08-13",
@@ -47,7 +77,7 @@
     "calories": 562,
     "avg_hr": 135,
     "max_hr": 204,
-    "id": 5
+    "id": 8
   },
   {
     "date": "2026-08-13",
@@ -57,7 +87,7 @@
     "calories": 90,
     "avg_hr": 94,
     "max_hr": 199,
-    "id": 6
+    "id": 9
   },
   {
     "date": "2026-08-10",
@@ -67,36 +97,6 @@
     "calories": 283,
     "avg_hr": 110,
     "max_hr": 150,
-    "id": 7
-  },
-  {
-    "date": "2026-08-10",
-    "sport": "Walking",
-    "strain": 7.1,
-    "duration_mins": 31,
-    "calories": 230,
-    "avg_hr": 122,
-    "max_hr": 169,
-    "id": 8
-  },
-  {
-    "date": "2026-08-09",
-    "sport": "Activity",
-    "strain": 4.1,
-    "duration_mins": 13,
-    "calories": 23,
-    "avg_hr": 73,
-    "max_hr": 161,
-    "id": 9
-  },
-  {
-    "date": "2026-08-08",
-    "sport": "Mountain-Biking",
-    "strain": 7.1,
-    "duration_mins": 64,
-    "calories": 290,
-    "avg_hr": 105,
-    "max_hr": 146,
     "id": 10
   }
 ]
