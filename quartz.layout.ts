@@ -23,7 +23,7 @@ export const sharedPageComponents: SharedLayout = {
       YouTube: "https://www.youtube.com/@vikravardhan",
       GitHub: "https://github.com/vikravardhan",
     },
-    showSubscribe: true,
+    showSubscribe: false,
   }),
 }
 
