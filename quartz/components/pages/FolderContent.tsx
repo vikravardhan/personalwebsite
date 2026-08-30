@@ -162,6 +162,7 @@ export default ((opts?: Partial<FolderContentOptions>) => {
       cursor: pointer;
       transition: all 0.15s ease;
       font-family: inherit;
+      text-transform: capitalize;
     }
     .writing-filter-btn:hover {
       border-color: var(--secondary);
