@@ -135,7 +135,7 @@ He ships the scrappiest of work and only refines if people show interest in it.
 
 ## Communication not only drives clarity, but accountability.
 
-I asked founders building running $10-50k MRR software businesses, “What are some qualities you expect from your team members?”
+I asked founders running $10-50k MRR software businesses, “What are some qualities you expect from your team members?”
 
 All of them mentioned constant and good communication.
 
@@ -175,7 +175,7 @@ To my friends outside India, this is quite contrary to how most of the Indian in
 
   
 
-For them, if you achieve something easily, it is somewhat considered to be not worthy of the result you have achieved. For some reason, hard work has to be associated with outcomes, which takes time to unlearn.
+For them, if you achieve something easily, you are somewhat considered not worthy of your achievement. For some reason, hard work has to be associated with outcomes, which takes time to unlearn.
 
   
 
@@ -235,7 +235,7 @@ In his own words, if you want to become a high agency individual, avoid this:
 >
 > That doesn't really matter by the way - but the fact that they’ve been presented in a dashboard with some pretty charts makes you believe something important is happening.
 >
-> They’ll say that the key numbers are down but hey look! this totally irrelevant number u don’t care about, that has some improvement.
+> They’ll say that the key numbers are down but hey look! this totally irrelevant number you don’t care about, that has some improvement.
 >
 > 2) If they continue to fail at their primary target, they’ll try and change the KPI measured and how it’s measured entirely.
 >
@@ -251,7 +251,7 @@ In his own words, if you want to become a high agency individual, avoid this:
 
 ## Sense of urgency and Promptness
 
-There is this reel where an entrepreneur mentions she is successful at his business because she is not richer, smarter or better than anyone else, but because [she is faster](https://www.instagram.com/reel/DI2AOXuMtW_/?igsi=MW9wYzU1MWcxODFydQ==).
+There is this reel where an entrepreneur mentions she is successful at her business because she is not richer, smarter or better than anyone else, but because [she is faster](https://www.instagram.com/reel/DI2AOXuMtW_/?igsi=MW9wYzU1MWcxODFydQ==).
 
 All high-agency people I've met have a great sense of urgency and promptness. If they know something needs to be done today and not doing it would make it a blocker for teammates, they would not postpone it.
 
