@@ -3,7 +3,7 @@ title: Now
 hideMetadata: true
 ---
 
-*Last updated: 30th August 2026*
+*Last updated: 14th September 2026*
 
 I believe in _small wins create momentum_.
 
@@ -13,10 +13,10 @@ What I am upto in a window of 30-45 days:
 
 ## LIVE from my life
 
-- No sugar for 6 months | Progress: 163/180 days
-- 15-hour intermittent fasting. Month four. Has been some inconsistencies because I moved from 14 hours of non-eating window to 15. I am still figuring out my routine around this.
+- No sugar for 6 months | Progress: 173/180 days
+- 15-hour intermittent fasting. Dropped back to 14 hours for now. Number of meals has to be two for 15-hour fast and I'm not yet sure how I plan it. But hey, I built an app to track my intermittent fasting and it's doing it's job fine!
 - Entertainment: Ted Lasso S4, Reacher S4.
-- Books: The Coffee Dictionary by Maxwell Colonna-Dashwood (12.8%), The Boron Letters (57%)
+- Books: Figuring out my next. Feel free to drop recommendations.
 
 ## Successful Missions
 
