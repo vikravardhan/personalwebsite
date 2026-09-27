@@ -13,13 +13,13 @@ What I am upto in a window of 30-45 days:
 
 ## LIVE from my life
 
-- No sugar for 6 months | Progress: 173/180 days
-- 15-hour intermittent fasting. Dropped back to 14 hours for now. Number of meals has to be two for 15-hour fast and I'm not yet sure how I plan it. But hey, I built an app to track my intermittent fasting and it's doing it's job fine!
-- Entertainment: Ted Lasso S4, Reacher S4.
-- Books: Figuring out my next. Feel free to drop recommendations.
+- 15-hour intermittent fasting. This has been one of my biggest lifestyle changes, keeping the quantity in check plus instilling some eating discipline.
+- Entertainment: Ted Lasso S4, The Mentalist S1
+- Books: Only dull people are brilliant at breakfast. Born a crime.
 
 ## Successful Missions
 
+- ~~I cut all sugar for 6 months~~
 - ~~[[I cut all sugar for 60 days]]~~.
 - ~~Run 50 kms in 30 days~~
 - ~~Run 35 kms in 30 days~~
